@@ -1,13 +1,16 @@
 import { motion } from "framer-motion";
 
-const DragMenuBtn = () => (
+const DragMenuBtn = ({ onClick }) => (
   <motion.button
     drag
     dragMomentum={false}
-    onClick={() => alert("Clicked!")}
+    onClick={onClick}
     className=""
+    type="button"
+    aria-label="Open menu"
+    title="Open menu"
   >
-    Menu
+    Drag me
   </motion.button>
 );
 
