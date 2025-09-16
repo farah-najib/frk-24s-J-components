@@ -1,4 +1,5 @@
 import "./App.css";
+import Player from "./components/Player";
 import DragMenuBtn from "./components/DragMenuBtn";
 import Button from "./components/Button";
 import MenuModal from "./components/MenuModal";
@@ -20,6 +21,7 @@ function App() {
       <Button variant="destructive" onClick={() => alert("hello")}>
         TEST BUTTON
       </Button>
+	  <Player />
     </>
   );
 }
