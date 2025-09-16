@@ -5,6 +5,6 @@ export default {
 	component: Board,
 }
 
-export const Board () => {}
+export const Board = {}
 
-export const BreakMyComponent = () => {}
+export const BreakMyComponent = {}
