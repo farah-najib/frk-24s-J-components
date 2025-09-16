@@ -1,5 +1,5 @@
 import "./App.css";
-import Player from "./components/Player";
+import Player from "./components/Player/Player";
 import DragMenuBtn from "./components/DragMenuBtn";
 import Button from "./components/Button";
 import MenuModal from "./components/MenuModal";
