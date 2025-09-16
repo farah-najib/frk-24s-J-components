@@ -1,2 +1,4 @@
+import styles from "./Board.module.css"
+
 const Board = () => {
-	return <>Hello Board</> }; export default Board;
+	return <div className={styles.board}></div> }; export default Board;
