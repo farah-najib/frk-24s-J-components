@@ -1,3 +1,4 @@
 const Board = () => {
 
-	return<>Hello Board</> } export default Board;
+	return<>Hello Board</>; }
+    export default Board;
