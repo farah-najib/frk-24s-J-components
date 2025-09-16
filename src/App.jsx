@@ -1,9 +1,9 @@
 import "./App.css";
-import Player from "./components/Player/Player";
-import DragMenuBtn from "./components/DragMenuBtn";
-import Button from "./components/Button";
-import MenuModal from "./components/MenuModal";
-import Grid from "./components/Grid";
+//import Player from "./components/Player/Player";
+//import DragMenuBtn from "./components/DragMenuBtn";
+//import Button from "./components/Button";
+//import MenuModal from "./components/MenuModal";
+//import Grid from "./components/Grid";
 import { useState } from "react";
 function App() {
   const [showModal, setShowModal] = useState(false);

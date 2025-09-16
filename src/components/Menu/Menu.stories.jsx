@@ -1,10 +1,13 @@
-import Menu from "./Menu"
+// Menu.stories.js
+import Menu from './Menu'
 
 export default {
-	title: "components/Menu,
-	component: Menu,
+    title: 'components/Menu',
+    component: Menu
 }
 
-export const Default = () => {}
+// Default story
+export const Default = () => <Menu />
 
-export const BreakMyComponent = () => {}
+// Another variation
+export const BreakMyComponent = () => <Menu />

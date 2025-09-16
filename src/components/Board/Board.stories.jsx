@@ -1,10 +1,13 @@
-import Board from "./Board"
+// Board.stories.js
+import Board from './Board'
 
 export default {
-	title: "components/Board,
-	component: Board,
+    title: 'components/Board',
+    component: Board
 }
 
-export const Board () => {}
+// A basic story
+export const DefaultBoard = () => <Board />
 
-export const BreakMyComponent = () => {}
+// Another story, for testing variations
+export const BreakMyComponent = () => <Board />
