@@ -1,0 +1,22 @@
+.cell{
+	width: 30px;
+	height: 30px;
+	border: 1px solid #555;
+	display: flex;
+	align-items: flex;
+	justify-content: center;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.white {
+	background-color: white;
+	border-radius: 50%;
+}
+
+.black{
+	background-color: black;
+	border-radius: 50%;
+}
+
+
