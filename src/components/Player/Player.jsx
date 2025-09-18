@@ -1,8 +1,6 @@
-const Player = () => {
+const Player = ({name, number}) => {
 	return (
-	   <div>
-		<h2>Player.jsx</h2>
-		</div>
+			<p>Player {number}: {name}</p>
 	);
 };
 
