@@ -12,7 +12,13 @@ export const Default = {
 	}	
 }
 
-export const BreakMyComponent = {}
+export const BreakMyComponent = {
+	args: {
+		name: [123, 123, 123, 123],
+		number: () => {}
+	}
+
+}
 
 
 
