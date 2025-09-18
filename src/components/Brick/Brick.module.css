@@ -1,0 +1,17 @@
+.black {
+  background-image: url("/public/black_brick.png");
+  background-repeat: none;
+  background-size: cover;
+}
+
+.white {
+  background-image: url("/public/white_brick.png") ;
+  background-repeat: none;
+  background-size: cover; 
+}
+.brick {
+
+height: 30px;
+width: 30px;
+}
+
