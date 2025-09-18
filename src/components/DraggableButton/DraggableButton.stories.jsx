@@ -1,9 +1,10 @@
-import DraggableButton from './DraggableButton' // default import
+import DraggableButton from './DraggableButton' 
 
 export default {
     title: 'Components/DraggableButton',
     component: DraggableButton
 }
 
-// Default story
 export const Default = () => <DraggableButton />
+
+export const BreakMyComponent = {};
