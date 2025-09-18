@@ -15,5 +15,8 @@ export const White = {
 	args: {color: "white"}}
 
 export const BreakMyComponent = {
-   args: {color: "kollaNissen"}
+   args: {color: "green"}
 }
+
+
+
