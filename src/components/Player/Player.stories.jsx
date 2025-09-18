@@ -14,8 +14,8 @@ export const Default = {
 
 export const BreakMyComponent = {
 	args: {
-		name: [123, 123, 123, 123],
-		number: () => {}
+		name: "faks01",
+		number: 1
 	}
 
 }
