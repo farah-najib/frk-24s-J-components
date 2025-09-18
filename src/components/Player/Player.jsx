@@ -1,7 +1,7 @@
 const Player = ({name, number}) => {
-	return (
-			<p>Player {number}: {name}</p>
-	);
-};
+	return(
+		<p>Player {number}: {name}</p>
+	)
+}
 
-export default Player;
+export default Player
