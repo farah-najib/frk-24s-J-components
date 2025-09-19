@@ -1,5 +1,6 @@
 import styles from "./Menu.module.css";
 import PlayerForm from "../PlayerForm/PlayerForm";
+import Button from "../Button/Button";
 
 const Menu = () => {
   return (
@@ -31,17 +32,9 @@ const Menu = () => {
       <PlayerForm />
 
       <footer className={styles.footerBtns}>
-        <button>quit game</button>
-        <button>restart</button>
-        <button
-          style={{
-            background: "#ff9500",
-            color: "black",
-            borderColor: "black",
-          }}
-        >
-          resume
-        </button>
+        <Button text="quit game"/>
+        <Button text="restart"/>
+        <Button text="resume" icon="▶" type="primary"/>
       </footer>
     </section>
   );

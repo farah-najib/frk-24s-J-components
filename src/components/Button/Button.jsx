@@ -11,7 +11,10 @@ const Button = ({text="Click me", icon, type}) => {
 	}
 
 	return(
-		<button className={primaryButton ? `${styles.primary}` : `${styles.secondary}`}>{text} {icon}</button>
+		<button className={primaryButton ? `${styles.primary}` : `${styles.secondary}`}>
+			{icon && <span>{icon}</span>}
+			<span>{text}</span>
+		</button>
 	)
 }
 
