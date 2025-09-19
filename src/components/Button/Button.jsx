@@ -10,15 +10,9 @@ const Button = ({text="Click me", icon, type}) => {
 		)
 	}
 
-	if (primaryButton) {
-		return (
-			<button className={styles.primary}>{text} {icon}</button>
-		)
-	} else {
-		return (
-			<button className={styles.secondary}>{text} {icon}</button>
-		)
-	}
+	return(
+		<button className={primaryButton ? `${styles.primary}` : `${styles.secondary}`}>{text} {icon}</button>
+	)
 }
 
 export default Button

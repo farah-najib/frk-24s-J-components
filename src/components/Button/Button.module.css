@@ -8,8 +8,9 @@ button {
 .primary {
 	background-color: #FF9500;
 	color: black;
-	border: 2px solid #222222;
+	border: 1px solid #222222;
 	outline: 1px solid white;
+	outline-offset: 2px; 
 }
 
 .secondary {
@@ -17,6 +18,6 @@ button {
 	color: white;
 	border: 1px solid white;
 	outline: 1px solid white;
-	outline-offset: 2px;
+	outline-offset: 2px; 
 }
 
