@@ -1,29 +1,30 @@
-import {useState} from "react"
-export function Input({number}) {
+import { useState } from "react";
+import styles from "./input.module.css";
 
-	let safeNumber = number;
-
- const sanitize = (z) =>
+export function Input({ label }) {
+  const sanitize = (z) =>
     z
       .replace(/[^A-Za-zÅÄÖåäö\- ]/g, "")
-      .replace(/\s+/g, " ")               
+      .replace(/\s+/g, " ")
       .trim()
       .slice(0, 13);
-	
-	const [name, setName] = useState("")
 
+  const [name, setName] = useState("");
 
-	if(typeof(number) !== "number" || number <= 0){
-	console.error("Missing number: ${number}.");
-		safeNumber = 99;
-	}
-	
-
-	return <div>
-		
-		<label htmlFor={`player${safeNumber}`}>Player {`${safeNumber}`}</label>
-		<input id={`player${safeNumber}`} type="text" value={name} onChange={(e) => setName(sanitize(e.target.value))} 
-		placeholder="Player name"/>
-
-		</div>
-} export default Input;
+  return (
+    <div className={styles.inputWrapper}>
+      <label htmlFor={label} className={styles.label}>
+        {label}
+      </label>
+      <input
+        id={{ label }}
+        type="text"
+        value={name}
+        onChange={(e) => setName(sanitize(e.target.value))}
+        placeholder="Player name"
+        className={styles.input}
+      />
+    </div>
+  );
+}
+export default Input;
