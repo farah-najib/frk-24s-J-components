@@ -12,7 +12,7 @@
 	align-items: center;
 }
 
-<<<<<<< HEAD
+
 .active {
 	border: 4px solid green;
 
@@ -26,11 +26,11 @@
 
 .black{
 	background-color: black;
-=======
+
+}
 .brick {
 	width: 30px;
 	height: 30px;
->>>>>>> ce343d1 (img added to cell)
 	border-radius: 50%;
 	pointer-events: none;
 }
