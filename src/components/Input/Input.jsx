@@ -1,7 +1,13 @@
 import { useState } from "react";
 import styles from "./input.module.css";
 
-export function Input({ label }) {
+export function Input({ 
+	label,
+	id,
+	value = "",
+	onChange = () => {},
+	placeholder = "",
+}) {
   const sanitize = (z) =>
     z
       .replace(/[^A-Za-zÅÄÖåäö\- ]/g, "")
@@ -9,19 +15,17 @@ export function Input({ label }) {
       .trim()
       .slice(0, 13);
 
-  const [name, setName] = useState("");
-
   return (
     <div className={styles.inputWrapper}>
-      <label htmlFor={label} className={styles.label}>
+      <label htmlFor={id} className={styles.label}>
         {label}
       </label>
       <input
-        id={{ label }}
+        id={ label }
         type="text"
-        value={name}
-        onChange={(e) => setName(sanitize(e.target.value))}
-        placeholder="Player name"
+        value={value}
+        onChange={(e) => onChange(sanitize(e.target.value))}
+        placeholder={placeholder}
         className={styles.input}
       />
     </div>

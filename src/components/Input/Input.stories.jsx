@@ -1,4 +1,5 @@
 import Input from "./Input"
+import {useState} from "react"
 
 export default {
 	title: 'Components/Input',
@@ -7,7 +8,17 @@ export default {
 }
 
 export const Default = {
-	args: { number: 1}
+	args: { id: "name", label: "Name", placeholder: "Enter name"}
+}
+
+export const Controlled = {
+	render: (args) => {
+	const [textInput, setTextInput] = useState("");
+	return <Input {...args} id={"name"} 
+		label={"Name"}
+		placeholder={"Enter name"}
+		value={textInput} onChange={setTextInput} />
+	}
 }
 
 export const BreakMyComponent = {
