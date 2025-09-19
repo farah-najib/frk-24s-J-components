@@ -9,9 +9,11 @@ dialog {
 dialog > h1 {
 	padding: 0;
 	margin-bottom: 20px;
+	text-align: center;
 }
 
 .buttonContainer {
 	display: flex;
+	gap: 12px;
 	justify-content: space-between;
 }

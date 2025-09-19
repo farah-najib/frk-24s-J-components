@@ -19,6 +19,22 @@ export const Icon = {
 	}	
 }
 
+export const Primary = {
+	args: {
+		text: "Primary",
+		icon: "▶",
+		type: "primary",
+	}
+}
+
+export const Secondary = {
+	args: {
+		text: "Secondary",
+		icon: "▶",
+		type: "secondary",
+	}
+}
+
 export const BreakMyComponent = {
 	args: {
 		text: [false, 12],

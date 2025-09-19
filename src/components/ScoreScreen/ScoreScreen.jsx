@@ -13,8 +13,8 @@ const ScoreScreen = ({player="Player 1"}) => {
 		<dialog open className={styles.dialog}>
 			<h1>{player} wins!</h1>
 			<div className={styles.buttonContainer}>
-				<Button text="Play again?"/>
 				<Button text="Quit"/>
+				<Button text="Play again?" type="primary"/>
 			</div>
 		</dialog>
 	)
