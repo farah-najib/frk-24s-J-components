@@ -3,12 +3,24 @@ import Input from "../Input/Input.jsx";
 import Brick from "../Brick/Brick";
 import styles from "./PlayerForm.module.css";
 
-export function PlayerForm() {
+export function PlayerForm({ onSubmit, actions }) {
   const [p1, setP1] = useState("");
   const [p2, setP2] = useState("");
 
+
+  const handleSubmit = (e) => {
+	e.preventDefault();
+	 if(p1.length <= 0 || p2.length <= 0){
+		console.warn("empty strings are not allowed")
+		 return;
+	 }
+	  
+	onSubmit?.({ p1: p1.trim(), p2: p2.trim() })
+	}
+
   return (
-    <>
+ 
+    <form onSubmit={handleSubmit}>
       <div className={styles.FormWrapper}>
         <Brick color="black" />
         <Input
@@ -22,14 +34,17 @@ export function PlayerForm() {
       <div className={styles.FormWrapper}>
         <Brick color="white" />
         <Input
-          id="p1"
+          id="p2"
           label="Player 2"
           value={p2}
           onChange={setP2}
           placeholder="Player 2"
         />
       </div>
-    </>
+	<div>
+	{actions ?? <button type='submit'>Play game</button>}
+	  </div>
+    </form>
   );
 }
 export default PlayerForm;
