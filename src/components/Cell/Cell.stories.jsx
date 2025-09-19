@@ -1,11 +1,14 @@
 import Cell from "./Cell";
 
 export default {
-	title: "Gomoku/Cell",
+	title: "components/Cell",
 	component: Cell,
 };
 
-export const Empty = () => <Cell value={null} onClick={() => {}} />;
-export const Black = () => <Cell value="black" onClick={() => {}} />;
-export const White = () => <Cell value="white" onClick={() => {}} />;
+export const Default = {}
+
+export const BreakMyComponent = {}
+
+
+
 
