@@ -7,8 +7,8 @@ export default {
 
 export const Default = {
 	args: {
-		name: "jan",
-		number: 123,
+		name: "Janik",
+		number: 1,
 	}	
 }
 
