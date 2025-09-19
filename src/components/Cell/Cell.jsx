@@ -18,7 +18,7 @@ export default function Cell() {
 
 	return ( <>
 		<div onClick={handleClick} className={`${styles.cell} ${active && styles.active}`}>
-		{active && <Brick color={color}/>}
+		{active && <h1>hello</h1>}
 		</div>
 		</>
 	);
