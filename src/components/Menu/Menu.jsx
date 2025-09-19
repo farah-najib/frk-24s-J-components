@@ -9,7 +9,7 @@ const Menu = () => {
       <h2 className={styles.sectionTitle}>about</h2>
 
       <p className={styles.textParagraph}>
-        Gomoku (五目並べ) means “five in a row” and has its origins in China
+        <b>Gomoku (五目並べ)</b> means “five in a row” and has its origins in China
         over 1000 years ago. It became very popular in Japan in the 1600s and
         later spread worldwide.
       </p>
