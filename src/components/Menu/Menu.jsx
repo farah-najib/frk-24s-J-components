@@ -29,6 +29,7 @@ const Menu = ({
               the 1600s and later spread worldwide.
             </p>
 
+
             <h2 className={styles.sectionTitle}>how to play</h2>
 
             <ul className={styles.textParagraph}>
