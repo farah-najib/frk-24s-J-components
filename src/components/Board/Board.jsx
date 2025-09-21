@@ -2,7 +2,7 @@ import styles from './Board.module.css'
 import { useState } from 'react'
 import Cell from '../Cell/Cell.jsx'
 
-const Board = ({ boardSize = 10 }) => {
+const Board = ({boardSize} ) => {
     // 2D board: null = empty, "black" or "white" = stone
     const [board, setBoard] = useState(
         Array(boardSize)
@@ -86,12 +86,12 @@ const Board = ({ boardSize = 10 }) => {
     }
 
     return (
-        <div className={styles.board}>
-            {cells}
-            <div className={styles.turnIndicator}>
+        <>
+            <div className={styles.board}>{cells}</div>
+            <div className={styles.turnIndicator} style={{ color: 'black' }}>
                 {winner ? `Winner: ${winner}` : `Turn: ${turn}`}
             </div>
-        </div>
+        </>
     )
 }
 
