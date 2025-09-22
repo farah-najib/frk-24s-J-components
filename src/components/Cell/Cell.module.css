@@ -1,22 +1,18 @@
 .cell{
-	width: 80px;
-	height: 80px;
-	border: 2px solid black;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #7D7D7D;
 	display: flex;
 	align-items: flex;
 	justify-content: center;
-	background-color: transparent;
+
 	cursor: pointer;
-	background-color: grey;
+	background-color: #474747;
 	display: flex;
 	align-items: center;
 }
 
 
-.active {
-	border: 4px solid green;
-
-}
 
 
 .white {
@@ -29,8 +25,8 @@
 
 }
 .brick {
-	width: 30px;
-	height: 30px;
+	width: 5px;
+	height: 5px;
 	border-radius: 50%;
 	pointer-events: none;
 }
