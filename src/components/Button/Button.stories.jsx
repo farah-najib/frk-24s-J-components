@@ -37,7 +37,7 @@ export const Secondary = {
 
 export const BreakMyComponent = {
 	args: {
-		text: [false, 12],
+		text: ["safffa"],
 		icon: true
 	}
 }
