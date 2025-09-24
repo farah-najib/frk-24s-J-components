@@ -15,26 +15,6 @@
 
 
 
-.white {
-	background-color: white;
-	border-radius: 50%;
-}
-
-.black{
-	background-color: black;
-
-}
-.brick {
-	width: 5px;
-	height: 5px;
-	border-radius: 50%;
-	pointer-events: none;
-}
-
-
-
-
-
 
 
 
