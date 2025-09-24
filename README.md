@@ -39,7 +39,7 @@ Gomoku is a two-player abstract strategy board game. Players take turns placing 
 - **Icons:** react-icons  
 - **Component Testing:** Storybook  
 
----
+--
 
 ## ⚡ Installation & Running Locally
 
