@@ -52,3 +52,7 @@ body {
     margin: 0 auto;
     display: flex;
 }
+
+button {
+    border-radius: 0px;
+}
