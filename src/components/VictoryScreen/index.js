@@ -1,1 +1,1 @@
-export {default as ScoreScreen} from './ScoreScreen'
+export {default as VictoryScreen} from './VictoryScreen'

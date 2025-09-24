@@ -1,7 +1,7 @@
-import styles from './ScoreScreen.module.css';
+import styles from './VictoryScreen.module.css';
 import Button from '../Button/Button'
 
-const ScoreScreen = ({player="Player 1"}) => {
+const VictoryScreen = ({player="Player 1"}) => {
 
 	if (typeof(player) !== "string") {
 		return (
@@ -20,4 +20,4 @@ const ScoreScreen = ({player="Player 1"}) => {
 	)
 }
 
-export default ScoreScreen
+export default VictoryScreen

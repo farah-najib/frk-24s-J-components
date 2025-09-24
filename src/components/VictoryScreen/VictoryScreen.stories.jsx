@@ -1,8 +1,8 @@
-import ScoreScreen from './ScoreScreen'
+import VictoryScreen from './VictoryScreen'
 
 export default {
-	title: "Components/ScoreScreen",
-	component: ScoreScreen,
+	title: "Components/VictoryScreen",
+	component: VictoryScreen,
 }
 
 export const Default = {
