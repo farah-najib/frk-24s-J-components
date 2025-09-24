@@ -5,7 +5,11 @@ export default {
     component: Board,
 }
 
-export const Default = {}
+export const Default = {
+    args: {
+        boardTiles: 80,
+    }
+}
 
 export const BreakMyComponent = {}
 
