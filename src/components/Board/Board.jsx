@@ -2,7 +2,7 @@ import styles from './Board.module.css'
 import Cell from "../Cell/Cell.jsx"
 
 
-const boardTiles = 30;
+const boardTiles = 80;
 
 const Board = () => {
 		
@@ -10,7 +10,7 @@ const Board = () => {
 		
 	let cellsToRender = [];
 
-	for(let i = 0; i <= 80; i++){
+	for(let i = 0; i <= boardTiles; i++){
 		cellsToRender.push(i);
 	}
 

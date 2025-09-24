@@ -1,6 +1,6 @@
 .brick {
-  width: 70%;
-  height: 70%;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   z-index: 1;
 }
