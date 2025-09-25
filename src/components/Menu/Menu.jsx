@@ -2,7 +2,7 @@ import styles from "./Menu.module.css";
 import PlayerForm from "../PlayerForm/PlayerForm";
 import Button from "../Button/Button";
 
-const Menu = ({className}) => {
+const Menu = ({className, startGame = true}) => {
   return (
     <section className={`${styles.menu} ${className}`}>
       <h1 className={styles.textHeader}>Gomoku</h1>
@@ -29,13 +29,24 @@ const Menu = ({className}) => {
 
       <h2 className={styles.textPlayerTitle}>Players</h2>
 
-      <PlayerForm />
 
+      {!startGame ? 
+      <PlayerForm>
+      <footer className={styles.footerBtns}>
+        <Button text="Play Game"/> 
+      </footer> 
+      </PlayerForm> :
+
+        <PlayerForm>
       <footer className={styles.footerBtns}>
         <Button text="quit game"/>
         <Button text="restart"/>
         <Button text="resume" icon="▶" type="primary"/>
-      </footer>
+      </footer> 
+      </PlayerForm>
+    }
+    
+  
     </section>
   );
 };

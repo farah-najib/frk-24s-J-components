@@ -9,18 +9,21 @@ export default {
 
 export const Default = {};
 
-export const ThreeButtons = {
+export const StartGame = {
 	render: (args) => (
-	<PlayerForm
-		{...args}
-	actions={
-	<>
-	<button>Quit game</button>
-	<button>Restart game</button>
-	<button type='submit'>Resume game</button>
-		</>
-	}
-		/>
+	<PlayerForm{...args}>
+	<button>Play Game</button>
+	</PlayerForm>
+	),
+}
+
+export const MainMenu = {
+	render: (args) => (
+	<PlayerForm{...args}>
+	<button>quit game</button>
+	<button>restart</button>
+	<button>resume</button>
+	</PlayerForm>
 	),
 }
 

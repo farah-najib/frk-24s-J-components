@@ -3,7 +3,7 @@ import Input from "../Input/Input.jsx";
 import Brick from "../Brick/Brick";
 import styles from "./PlayerForm.module.css";
 
-export function PlayerForm({ onSubmit, actions }) {
+export function PlayerForm({ onSubmit, children }) {
   const [p1, setP1] = useState("");
   const [p2, setP2] = useState("");
 
@@ -42,7 +42,7 @@ export function PlayerForm({ onSubmit, actions }) {
         />
       </div>
 	<div>
-	{actions ?? <button type='submit'>Play game</button>}
+   {children}
 	  </div>
     </form>
   );
