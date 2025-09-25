@@ -3,14 +3,14 @@ b {
   font-weight: 700;
 }
 .menu {
-  height: 800px;
-  width: 460px;
-  padding: 30px 50px;
+  height: 600px;
+  width: 300px;
+  padding: 10px 20px;
   background-color: #222222;
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 0px;
   border-radius: 20px;
 }
 .menu > * {
@@ -20,27 +20,31 @@ b {
   text-align: center;
   color: #ff9500;
   font-weight: 700;
+  font-size: 30px;
 }
 .sectionTitle {
   color: #ff9500;
+   font-size: 20px;
 }
 .textParagraph {
   font-weight: 300;
+   font-size: 14px;
 }
 .textPlayerTitle {
   text-align: center;
-  color: #ff9500;
+  color: #ff9500; 
+  font-size: 20px;
 }
 input {
   padding: 5px;
-  min-width: 220px;
+  min-width: 200px;
   border-radius: 10px;
 }
 .footerBtns {
   display: flex;
   margin-top: auto;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
 }
 button {
   font-weight: bold;
