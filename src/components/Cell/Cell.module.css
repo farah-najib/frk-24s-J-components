@@ -11,4 +11,5 @@
   display: flex;
   align-items: center;
   z-index: 2;
+  border-radius: 0px;
 }
