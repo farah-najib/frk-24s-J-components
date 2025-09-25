@@ -32,18 +32,14 @@ const Menu = ({className, startGame = true}) => {
 
       {!startGame ? 
       <PlayerForm>
-      <footer className={styles.footerBtns}>
         <Button text="Play Game"/> 
-      </footer> 
       </PlayerForm> :
 
         <PlayerForm>
-      <footer className={styles.footerBtns}>
-        <Button text="quit game"/>
-        <Button text="restart"/>
-        <Button text="resume" icon="▶" type="primary"/>
-      </footer> 
-      </PlayerForm>
+          <Button text="quit game"/>
+          <Button text="restart"/>
+          <Button text="resume" icon="▶" type="primary"/>
+        </PlayerForm>
     }
     
   
