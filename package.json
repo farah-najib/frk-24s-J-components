@@ -2,9 +2,9 @@
   "name": "gumoku-component",
   "version": "0.0.0",
   "type": "module",
-  "main": "./src/index.jsx",
-  "module": "./src/index.jsx",
-  "exports": {".": "./src/index.jsx"},
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "exports": {".": "./src/index.js"},
   "files": ["src"],                    
   "sideEffects": false,
   "peerDependencies": {
