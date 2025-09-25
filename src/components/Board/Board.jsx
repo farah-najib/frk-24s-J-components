@@ -11,10 +11,14 @@ const Board = ({children, boardTiles, className = ""}) => {
 	}
     return (
 			<div className={`${styles.board} ${className}`}>
+				<div className={styles.behindCells}>
+					{children}
+
+				</div>
 				{cellsToRender.map((cell, idx) => (
 				<Cell key={idx} />
 				))}
-				{children}
+				
 			</div>
 		)
 }

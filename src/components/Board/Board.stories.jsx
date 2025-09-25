@@ -8,7 +8,17 @@ export default {
 export const Default = {
     args: {
         boardTiles: 80,
+        
     }
+}
+
+export const StartGame = {
+    render: (args) => (
+
+    <Board{...args}>
+    <h1>Play Game</h1>
+    </Board>
+    ),
 }
 
 export const BreakMyComponent = {}
