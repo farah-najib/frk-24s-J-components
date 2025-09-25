@@ -1,6 +1,6 @@
 import styles from "./BackgroundBanner.module.css";
 
-const BackgroundBanner = ({ text = "Gomoku", className = "" }) => {
+const BackgroundBanner = ({ text = "GOMOKU", className = "" }) => {
   return (
     <div className={`${styles.banner} ${className}`}>
       <span className={styles.text}>{text}</span>
