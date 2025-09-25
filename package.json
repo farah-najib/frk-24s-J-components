@@ -2,6 +2,15 @@
   "name": "gumoku-component",
   "version": "0.0.0",
   "type": "module",
+  "main": "./src/index.jsx",
+  "module": "./src/index.jsx",
+  "exports": {".": "./src/index.jsx"},
+  "files": ["src"],                    
+  "sideEffects": false,
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
