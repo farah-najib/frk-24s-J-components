@@ -1,60 +1,61 @@
 import styles from "./Cell.module.css";
-import {useState, useMemo, useEffect} from "react"
-import Brick from "../Brick/Brick.jsx"
+import { useState, useMemo, useEffect } from "react";
+import Brick from "../Brick/Brick.jsx";
 
+export default function Cell({
+  initialColor = "black",
+  isActivated = false,
+  onActivate,
+  disabled,
+}) {
+  const safeColor = useMemo(() => {
+    const x = String(initialColor).toLowerCase();
+    if (x === "black" || x === "white") return x;
+    console.warn(`Invalid Color:${initialColor}. Defaulting to "black".`);
+    return "black";
+  }, [initialColor]);
 
-export default function Cell({initialColor = "black", isActivated = false, onActivate}) {
+  const safeActive =
+    typeof isActivated === "boolean"
+      ? isActivated
+      : (() => {
+          console.warn("Is not a boolean");
+          return Boolean(isActivated);
+        })();
 
-	const safeColor = useMemo(() => {
-                const x = String(initialColor).toLowerCase();
-                if(x === "black" || x === "white") return x;
-                console.warn(`Invalid Color:${initialColor}. Defaulting to "black".`)
-                return "black";
-        }, [initialColor]);
+  const [active, setActive] = useState(isActivated);
+  const [color, setColor] = useState(safeColor);
 
+  useEffect(() => {
+    setActive(safeActive);
+  }, [safeActive]);
+  useEffect(() => {
+    setColor(safeColor);
+  }, [safeColor]);
 
-	const safeActive = typeof isActivated === "boolean" ? isActivated :
-		(() => {
-			console.warn("Is not a boolean");
-			return Boolean(isActivated)
-		})();
+  console.log(`activated: ${active}. Color: ${color}`);
 
+  const handleClick = () => {
+    if (active) return console.error("Button has already been used.");
 
-	const [active, setActive] = useState(isActivated);
-	const [color, setColor] = useState(safeColor);
+    if (!active) {
+      setActive(true);
+      setColor(safeColor);
 
-	useEffect(() => {setActive(safeActive)}, [safeActive])
-	useEffect(() => {setColor(safeColor)}, [safeColor])
+      onActivate?.(color);
+    }
+  };
 
-	console.log(`activated: ${active}. Color: ${color}`)
-
-
-	const handleClick = () =>{
-
-			if(active)return console.error("Button has already been used.")
-
-			if(!active){
-
-			setActive(true);
-			setColor(safeColor);
-
-			onActivate?.(color)
-
-		}
-
-	}
-
-
-
-	return ( <>
-		<button type="button" onClick={handleClick} className={`${styles.cell} ${active && styles.active}` }
-		disabled={active}>
-            
-		{active && <Brick color={safeColor} aria-pressed={active}/>}
-
-
-		</button>
-		</>
-	);
-
+  return (
+    <>
+      <button
+        type="button"
+        onClick={handleClick}
+        className={`${styles.cell} ${active && styles.active}`}
+        disabled={disabled || active}
+      >
+        {active && <Brick color={safeColor} aria-pressed={active} />}
+      </button>
+    </>
+  );
 }
