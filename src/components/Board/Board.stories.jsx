@@ -1,33 +1,37 @@
-import Board from './Board'
+import Board from "./Board";
 
 export default {
-    title:'components/Board',
-    component: Board,
-}
+  title: "components/Board",
+  component: Board,
+};
 
 export const Default = {
-    args: {
-        boardTiles: 80,
-        
-    }
-}
+  args: {
+    boardTiles: 80,
+    gameStarted: true,
+  },
+};
 
 export const Player = {
-    render: (args) => (
-
-    <Board boardTiles={80} playerOrder={"Player 1"}/>
-      
-    ),
-}
+  render: () => (
+    <Board gameStarted={true} boardTiles={80} playerOrder={"Player 1"} />
+  ),
+};
 
 export const StartMenu = {
-    render: (args) => (
+  render: () => (
+    <Board
+      gameStarted={false}
+      boardTiles={80}
+      playerOrder={"Player 1"}
+      largeMenu={false}
+    />
+  ),
+};
+export const MidGameMenu = {
+  render: () => (
+    <Board gameStarted={false} boardTiles={80} playerOrder={"Player 1"} />
+  ),
+};
 
-    <Board boardTiles={80} playerOrder={"Player 1"}/>
-      
-    ),
-}
-
-
-export const BreakMyComponent = {}
-
+export const BreakMyComponent = {};

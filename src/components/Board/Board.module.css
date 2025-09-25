@@ -1,23 +1,42 @@
 .board {
-    display: grid;
-    margin: 0;
-    padding: 0;
-    width: calc(60px * 9);
-    height: calc(60px * 9);
-    grid-template-columns: repeat(9, 60px);
-    grid-template-rows: repeat(9, 60px);
-    background: #474747;
+  display: grid;
+  margin: 0;
+  padding: 0;
+  width: calc(60px * 9);
+  height: calc(60px * 9);
+  grid-template-columns: repeat(9, 60px);
+  grid-template-rows: repeat(9, 60px);
+  background: #474747;
 
-    position: absolute;
-
+  position: relative;
 }
-.behindCells{
-    position: absolute;
-    top: 40%;
-    left: 35%;
-    right: 0;
-    translate: (-50%, -50%);
-    z-index: 1;
-    pointer-events: none;
-    font-size: 70px;
+.overlay,
+.cells {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.overlay {
+  display: grid;
+  place-self: center;
+  z-index: 1;
+  pointer-events: none;
+  font-size: 70px;
+}
+
+.menu {
+  position: absolute;
+  top: 0%;
+  left: 20%;
+  right: 0;
+  translate: (-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.cells {
+  display: grid;
+  grid-template-columns: repeat(9, 60px);
+  grid-template-rows: repeat(9, 60px);
+  z-index: 2;
 }
