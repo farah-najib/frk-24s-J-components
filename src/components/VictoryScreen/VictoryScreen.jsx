@@ -20,4 +20,4 @@ const VictoryScreen = ({player="Player 1"}) => {
 	)
 }
 
-export default VictoryScreen
+export default VictoryScreen;

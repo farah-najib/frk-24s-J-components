@@ -1,14 +1,14 @@
-import Board from '../components/Board/Board.jsx'
-import Menu from '../components/Menu/Menu.jsx'
-export default function HomePage() {
-    // You can manage game-level state here if needed
-    const BOARD_SIZE = 80
+// import Board from '../components/Board/Board.jsx'
+// import Menu from '../components/Menu/Menu.jsx'
+// export default function HomePage() {
+//     // You can manage game-level state here if needed
+//     const BOARD_SIZE = 80
 
-    return (
-        <div>
-            <h1 style={{ color: 'black' }}>Gomuko Game</h1>
-            {/* <Menu/> */}
-            <Board boardTiles={BOARD_SIZE}/>
-        </div>
-    )
-}
+//     return (
+//         <div>
+//             <h1 style={{ color: 'black' }}>Gomuko Game</h1>
+//             {/* <Menu/> */}
+//             <Board boardTiles={BOARD_SIZE}/>
+//         </div>
+//     )
+// }

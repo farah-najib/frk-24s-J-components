@@ -1,13 +1,9 @@
 import './index.css'
-
-import HomePage from './Pages/HomePage'
-
-function App() {
+export default function App() {
     return (
         <>
-            {/* <HomePage /> */}
+          {/* <h1 style={{color: 'black'}}>Hello world</h1> */}
         </>
     )
 }
 
-export default App
