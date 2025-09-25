@@ -1,8 +1,8 @@
 import styles from './Board.module.css'
 import Cell from "../Cell/Cell.jsx"
+import Menu from "../Menu"
 
-
-const Board = ({children, boardTiles, className = ""}) => {
+const Board = ({playerOrder, boardTiles, className = "", gameStarted = false}) => {
 	
 	let cellsToRender = [];
 
@@ -11,13 +11,15 @@ const Board = ({children, boardTiles, className = ""}) => {
 	}
     return (
 			<div className={`${styles.board} ${className}`}>
+					{!gameStarted && <Menu />}
 				<div className={styles.behindCells}>
-					{children}
+					{playerOrder}
 				</div>
+				
 				{cellsToRender.map((cell, idx) => (
 				<Cell key={idx} />
 				))}
-				
+			
 			</div>
 		)
 }

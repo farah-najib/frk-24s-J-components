@@ -12,6 +12,7 @@ b {
   flex-direction: column;
   gap: 0px;
   border-radius: 20px;
+  z-index: 10;
 }
 .menu > * {
   margin: 0;

@@ -12,14 +12,22 @@ export const Default = {
     }
 }
 
-export const StartGame = {
+export const Player = {
     render: (args) => (
 
-    <Board{...args}>
-    <h1>Play Game</h1>
-    </Board>
+    <Board boardTiles={80} playerOrder={"Player 1"}/>
+      
     ),
 }
+
+export const StartMenu = {
+    render: (args) => (
+
+    <Board boardTiles={80} playerOrder={"Player 1"}/>
+      
+    ),
+}
+
 
 export const BreakMyComponent = {}
 
