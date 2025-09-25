@@ -1,6 +1,7 @@
 import styles from "./Board.module.css";
 import Cell from "../Cell/Cell.jsx";
 import Menu from "../Menu";
+import VictoryScreen from "../VictoryScreen";
 
 const Board = ({
   playerOrder,
@@ -8,6 +9,7 @@ const Board = ({
   className = "",
   gameStarted = false,
   largeMenu = true,
+  gameEnded = false,
 }) => {
   let cellsToRender = [];
 
@@ -17,7 +19,7 @@ const Board = ({
   return (
     <div className={`${styles.board} ${className}`}>
       {/* Player story - text behind cells */}
-      <div className={styles.overlay}>{playerOrder}</div>
+      <div className={styles.playerOverlay}>{playerOrder}</div>
 
       <div className={styles.cells}>
         {cellsToRender.map((_, idx) => (
@@ -26,9 +28,16 @@ const Board = ({
       </div>
 
       {/* Mid Game Menu story */}
-      {!gameStarted && (
+      {!gameStarted && !gameEnded && (
         <div className={styles.menu}>
           <Menu startGame={largeMenu} />{" "}
+        </div>
+      )}
+
+      {/* Victory Screen story */}
+      {gameEnded && gameStarted && (
+        <div className={styles.scoreScreen}>
+          <VictoryScreen />
         </div>
       )}
     </div>

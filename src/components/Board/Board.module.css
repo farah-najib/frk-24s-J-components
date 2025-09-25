@@ -10,28 +10,26 @@
 
   position: relative;
 }
-.overlay,
-.cells {
+.playerOverlay,
+.cells,
+.menu,
+.scoreScreen {
   grid-column: 1 / -1;
   grid-row: 1 / -1;
 }
 
-.overlay {
+.playerOverlay {
   display: grid;
   place-self: center;
   z-index: 1;
   pointer-events: none;
   font-size: 70px;
 }
-
-.menu {
-  position: absolute;
-  top: 0%;
-  left: 20%;
-  right: 0;
-  translate: (-50%, -50%);
-  z-index: 10;
-  pointer-events: none;
+.menu,
+.scoreScreen {
+  display: grid;
+  place-self: center;
+  z-index: 3;
 }
 
 .cells {

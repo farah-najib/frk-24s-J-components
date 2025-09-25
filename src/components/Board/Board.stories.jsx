@@ -34,4 +34,15 @@ export const MidGameMenu = {
   ),
 };
 
+export const GameOver = {
+  render: () => (
+    <Board
+      gameStarted={true}
+      boardTiles={80}
+      playerOrder={"Player 1"}
+      gameEnded={true}
+    />
+  ),
+};
+
 export const BreakMyComponent = {};
