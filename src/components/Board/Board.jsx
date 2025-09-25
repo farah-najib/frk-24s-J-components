@@ -2,7 +2,7 @@ import styles from './Board.module.css'
 import Cell from "../Cell/Cell.jsx"
 
 
-const Board = ({children, boardTiles}) => {
+const Board = ({children, boardTiles, className = ""}) => {
 	
 	let cellsToRender = [];
 
@@ -10,7 +10,7 @@ const Board = ({children, boardTiles}) => {
 		cellsToRender.push(i);
 	}
     return (
-			<div className={styles.board}>
+			<div className={`${styles.board} ${className}`}>
 				{cellsToRender.map((cell, idx) => (
 				<Cell key={idx} />
 				))}
