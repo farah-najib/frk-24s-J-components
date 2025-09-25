@@ -2,7 +2,7 @@ import styles from './Board.module.css'
 import Cell from "../Cell/Cell.jsx"
 
 
-const Board = ({boardTiles}) => {
+const Board = ({children, boardTiles}) => {
 	
 	let cellsToRender = [];
 
@@ -14,6 +14,7 @@ const Board = ({boardTiles}) => {
 				{cellsToRender.map((cell, idx) => (
 				<Cell key={idx} />
 				))}
+				{children}
 			</div>
 		)
 }
