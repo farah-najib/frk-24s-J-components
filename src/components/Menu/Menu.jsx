@@ -2,9 +2,9 @@ import styles from "./Menu.module.css";
 import PlayerForm from "../PlayerForm/PlayerForm";
 import Button from "../Button/Button";
 
-const Menu = () => {
+const Menu = ({className}) => {
   return (
-    <section className={styles.menu}>
+    <section className={`${styles.menu} ${className}`}>
       <h1 className={styles.textHeader}>Gomoku</h1>
 
       <h2 className={styles.sectionTitle}>about</h2>
