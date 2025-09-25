@@ -19,7 +19,7 @@ const Board = ({
   return (
     <div className={`${styles.board} ${className}`}>
       {/* Player story - text behind cells */}
-      <div className={styles.playerOverlay}>{playerOrder}</div>
+      {!gameEnded && <div className={styles.playerOverlay}>{playerOrder}</div>}
 
       <div className={styles.cells}>
         {cellsToRender.map((_, idx) => (
