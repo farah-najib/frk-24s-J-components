@@ -1,1 +1,1 @@
-export {default as PlayerForm} from "./PlayerForm"
+export {default} from "./PlayerForm"

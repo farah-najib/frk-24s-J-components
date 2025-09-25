@@ -1,1 +1,1 @@
-export {default as DraggableButton} from './DraggableButton';
+export {default} from './DraggableButton';

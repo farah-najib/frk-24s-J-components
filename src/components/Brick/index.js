@@ -1,1 +1,1 @@
-export {default as Brick} from "./Brick"
+export {default} from "./Brick"
