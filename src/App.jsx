@@ -1,8 +1,11 @@
 import './index.css'
+
+import Board from './components/Board/Board'
 export default function App() {
     return (
         <>
-          {/* <h1 style={{color: 'black'}}>Hello world</h1> */}
+        
+          <Board boardTiles={80}>Player 1</Board>
         </>
     )
 }
