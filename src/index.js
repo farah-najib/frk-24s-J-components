@@ -1,11 +1,9 @@
-export {default as Board} from "./components/Board"
-export {default as Brick} from "./components/Brick"
-export {default as Button} from "./components/Button"
-export {default as Cell} from "./components/Cell"
-export {default as DraggableButton} from "./components/DraggableButton"
-export {default as Input} from "./components/Input"
-export {default as Menu} from "./components/Menu"
-export {default as Player} from "./components/Player"
-export {default as PlayerForm} from "./components/PlayerForm"
-export {default as VictoryScreen} from "./components/VictoryScreen"
-
+export { default as Board } from "./components/Board";
+export { default as Brick } from "./components/Brick";
+export { default as Button } from "./components/Button";
+export { default as Cell } from "./components/Cell";
+export { default as Input } from "./components/Input";
+export { default as Menu } from "./components/Menu";
+export { default as Player } from "./components/Player";
+export { default as PlayerForm } from "./components/PlayerForm";
+export { default as VictoryScreen } from "./components/VictoryScreen";
