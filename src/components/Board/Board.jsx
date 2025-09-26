@@ -8,7 +8,7 @@ const Board = ({
   boardTiles,
   className = "",
   gameStarted = true,
-  largeMenu = false,
+  largeMenu = true,
   gameEnded = false,
   handleCellClick,
 }) => {
