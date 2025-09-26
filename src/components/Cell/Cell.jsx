@@ -1,5 +1,5 @@
 import styles from "./Cell.module.css";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import Brick from "../Brick/Brick.jsx";
 
 export default function Cell({
@@ -8,12 +8,14 @@ export default function Cell({
   onActivate,
   disabled,
 }) {
-  const safeColor = useMemo(() => {
+  const clickLock = useRef(false);
+
+  const safeColor = (() => {
     const x = String(initialColor).toLowerCase();
     if (x === "black" || x === "white") return x;
     console.warn(`Invalid Color:${initialColor}. Defaulting to "black".`);
     return "black";
-  }, [initialColor]);
+  })();
 
   const safeActive =
     typeof isActivated === "boolean"
@@ -29,21 +31,29 @@ export default function Cell({
   useEffect(() => {
     setActive(safeActive);
   }, [safeActive]);
+
   useEffect(() => {
-    setColor(safeColor);
+    if (!active) setColor(safeColor);
   }, [safeColor]);
 
   console.log(`activated: ${active}. Color: ${color}`);
 
   const handleClick = () => {
-    if (active) return console.error("Button has already been used.");
+    if (clickLock.current || active || disabled) {
+      return console.error("Button has already been used.");
+    }
+    clickLock.current = true;
 
     if (!active) {
       setActive(true);
       setColor(safeColor);
 
-      onActivate?.(color);
+      onActivate?.(safeColor);
     }
+
+    setTimeout(() => {
+      clickLock.current = false;
+    }, 0);
   };
 
   return (
@@ -54,7 +64,7 @@ export default function Cell({
         className={`${styles.cell} ${active && styles.active}`}
         disabled={disabled || active}
       >
-        {active && <Brick color={safeColor} aria-pressed={active} />}
+        {active && <Brick color={color} aria-pressed={active} />}
       </button>
     </>
   );
