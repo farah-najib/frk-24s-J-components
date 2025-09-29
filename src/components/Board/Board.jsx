@@ -3,15 +3,19 @@ import Cell from "../Cell/Cell.jsx";
 import Menu from "../Menu";
 import VictoryScreen from "../VictoryScreen";
 
-const Board = ({
-  playerTurn,
+
+const Board = ({ gameConfig, handleCellClick, playerTurn }) => {
+  
+  const {
   boardTiles,
   className = "",
-  gameStarted = true,
-  largeMenu = false,
-  gameEnded = false,
-  handleCellClick,
-}) => {
+  gameStarted,
+  largeMenu,
+  gameEnded
+} = gameConfig
+
+  
+  
   let cellsToRender = [];
 
   for (let i = 0; i <= boardTiles; i++) {
@@ -50,5 +54,5 @@ const Board = ({
  </div>
  </div>
   );
-};
+  };
 export default Board;
