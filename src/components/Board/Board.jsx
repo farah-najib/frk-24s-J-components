@@ -21,6 +21,7 @@ const Board = ({
   const currentColor = playerTurn === 1 ? "black" : "white";
 
   return (
+ <div className={styles.boardWrapper}>
     <div className={`${styles.board} ${className}`} onClick={handleCellClick}>
       {/* Player story - text behind cells */}
       {!gameEnded && (
@@ -46,7 +47,8 @@ const Board = ({
           <VictoryScreen />
         </div>
       )}
-    </div>
+ </div>
+ </div>
   );
 };
 export default Board;

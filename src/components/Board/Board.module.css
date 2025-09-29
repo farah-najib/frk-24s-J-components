@@ -1,15 +1,22 @@
+.boardWrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
 .board {
   display: grid;
   margin: 0;
   padding: 0;
-  width: calc(60px * 9);
-  height: calc(60px * 9);
-  grid-template-columns: repeat(9, 60px);
-  grid-template-rows: repeat(9, 60px);
+  width: min(95vmin, 600px);
+  height: min(95vmin, 600px);
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
   background: #474747;
-
   position: relative;
 }
+
 .playerOverlay,
 .cells,
 .menu,
@@ -25,8 +32,9 @@
 .playerOverlay {
   z-index: 1;
   pointer-events: none;
-  font-size: 70px;
+  font-size: 10vmin;
 }
+
 .menu,
 .scoreScreen {
   z-index: 3;
@@ -34,7 +42,8 @@
 
 .cells {
   display: grid;
-  grid-template-columns: repeat(9, 60px);
-  grid-template-rows: repeat(9, 60px);
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
   z-index: 2;
 }
+
