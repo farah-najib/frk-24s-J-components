@@ -1,3 +1,5 @@
+import "./assets/fonts.css";
+
 export { default as Board } from "./components/Board";
 export { default as Brick } from "./components/Brick";
 export { default as Button } from "./components/Button";

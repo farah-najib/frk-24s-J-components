@@ -1,12 +1,11 @@
-import './index.css'
+import "./assets/fonts.css";
+import "./index.css";
 
-import Board from './components/Board/Board'
+import Board from "./components/Board/Board";
 export default function App() {
-    return (
-        <>
-        
-          <Board boardTiles={80}>Player 1</Board>
-        </>
-    )
+  return (
+    <>
+      <Board boardTiles={80}>Player 1</Board>
+    </>
+  );
 }
-

@@ -1,34 +1,4 @@
-@font-face {
-    font-family: 'SatoriTrial';
-    src: url('fonts/SatoriTRIAL-Thin.ttf');
-    font-weight: 100;
-    font-style: normal;
-    
-}
-@font-face {
-    font-family: 'SatoriTrial';
-    src: url('fonts/SatoriTRIAL-Light.ttf');
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'SatoriTrial';
-    src: url('fonts/SatoriTRIAL-Regular.ttf');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'SatoriTrial';
-    src: url('fonts/SatoriTRIAL-Medium.ttf');
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'SatoriTrial';
-    src: url('fonts/SatoriTRIAL-Bold.ttf');
-    font-weight: 700;
-    font-style: normal;
-}
+
 
 :root {
     color-scheme: light dark;
@@ -46,7 +16,7 @@
 }
 
 body {
-    font-family: 'SatoriTrial';
+    font-family: "SatoriTrial", system-ui, sans-serif;
     width: 100vh;
     height: 100vh;
     margin: 0 auto;

@@ -24,5 +24,5 @@ export const Error404 = {
 };
 
 export const BreakMyComponent = {
-  args: { text: "AjjaBajja" },
+  args: { text: "12345" },
 };
