@@ -7,9 +7,11 @@ const Menu = ({className, startGame = true}) => {
 
   const [openModal, setOpenModal] = useState(true)
 
-  const closeModal = () => {
+  const closeModal = (e) => {
+    e.stopPropagation()
     setOpenModal(false)
   }
+  
   return (
     <>
     {openModal && <div className={styles.backdrop} onClick={closeModal}>
@@ -45,11 +47,11 @@ const Menu = ({className, startGame = true}) => {
         <Button text="Play Game"/> 
       </PlayerForm> :
 
-<PlayerForm>
-          <Button text="quit game"/>
-          <Button text="restart"/>
-          <Button text="resume" icon="▶" type="primary"/>
-        </PlayerForm>
+      <PlayerForm>
+        <Button text="quit game"/>
+        <Button text="restart"/>
+        <Button text="resume" icon="▶" type="primary"/>
+      </PlayerForm>
     }
     
   
