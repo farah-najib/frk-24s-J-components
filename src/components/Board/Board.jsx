@@ -23,10 +23,6 @@ const Board = ({
   return (
     <div className={styles.boardWrapper}>
       <div className={`${styles.board} ${className}`} onClick={handleCellClick}>
-        {/* Player story - text behind cells */}
-        {!gameEnded && (
-          <div className={styles.playerOverlay}>Player {playerTurn}</div>
-        )}
 
         <div className={styles.cells}>
           {cellsToRender.map((_, idx) => (
