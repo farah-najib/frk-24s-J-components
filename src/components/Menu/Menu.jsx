@@ -1,10 +1,20 @@
 import styles from "./Menu.module.css";
 import PlayerForm from "../PlayerForm/PlayerForm";
 import Button from "../Button/Button";
+import { useState } from "react";
 
 const Menu = ({className, startGame = true}) => {
+
+  const [openModal, setOpenModal] = useState(true)
+
+  const closeModal = () => {
+    setOpenModal(false)
+  }
   return (
-    <section className={`${styles.menu} ${className}`}>
+    <>
+    {openModal && <div className={styles.backdrop} onClick={closeModal}>
+
+    <dialog open className={`${styles.menu} ${className}`}>
       <h1 className={styles.textHeader}>Gomoku</h1>
 
       <h2 className={styles.sectionTitle}>about</h2>
@@ -35,7 +45,7 @@ const Menu = ({className, startGame = true}) => {
         <Button text="Play Game"/> 
       </PlayerForm> :
 
-        <PlayerForm>
+<PlayerForm>
           <Button text="quit game"/>
           <Button text="restart"/>
           <Button text="resume" icon="▶" type="primary"/>
@@ -43,7 +53,10 @@ const Menu = ({className, startGame = true}) => {
     }
     
   
-    </section>
+    </dialog>
+    </div>}
+    </>
+    
   );
 };
 export default Menu;
