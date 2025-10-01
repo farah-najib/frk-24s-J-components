@@ -6,11 +6,20 @@ import react from '@vitejs/plugin-react';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [react()],
+  plugins: [cssInjectedByJsPlugin(), react()],
+  build: {
+    lib: {entry: 'src/index.js', formats: ['es'], fileName: () => 'index.js',},
+    rollupOptions: {external: ['react', 'react-dom'], output: {inlineDynamicImports: true,},},
+    cssCodeSplit: false,
+    minify: 'esbuild',
+    sourcemap: true
+},
+  css: {modules: {localsConvention: 'camelCase',},},
   test: {
     projects: [{
       extends: true,
