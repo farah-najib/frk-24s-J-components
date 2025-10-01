@@ -39,6 +39,7 @@ export default function Cell({
   console.log(`activated: ${active}. Color: ${color}`);
 
   const handleClick = () => {
+    alert("clicked cell");
     if (clickLock.current || active || disabled) {
       return console.error("Button has already been used.");
     }
