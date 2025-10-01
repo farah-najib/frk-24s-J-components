@@ -15,7 +15,7 @@ const Menu = ({ className, startGame = true }) => {
     <>
       {openModal && (
         <div className={styles.backdrop} onClick={closeModal}>
-          <dialog open className={`${styles.menu} ${className}`}>
+          <dialog open className={`${styles.menu} ${className}`} onClick={(e) => e.stopPropagation()}>
             <h1 className={styles.textHeader}>Gomoku</h1>
 
             <h2 className={styles.sectionTitle}>about</h2>
