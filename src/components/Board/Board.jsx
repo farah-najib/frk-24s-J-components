@@ -9,8 +9,6 @@ const Board = ({
   boardTiles,
   className = "",
   gameStarted = true,
-  largeMenu = true,
-  gameEnded = false,
 }) => {
   let cellsToRender = [];
 

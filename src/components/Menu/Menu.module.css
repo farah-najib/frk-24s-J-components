@@ -1,13 +1,16 @@
 
 .backdrop {
-  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  background-color: transparent;
   width: 100%;
   height: 100%;
+  z-index: 5
 }
 b {
   font-weight: 700;
 }
 .menu {
+  height: auto;
   width: 360px;
   padding: 20px 40px;
   background-color: #222222;
@@ -49,7 +52,6 @@ input {
 }
 .footerBtns {
   display: flex;
-  margin-top: auto;
   justify-content: center;
   gap: 10px;
 }

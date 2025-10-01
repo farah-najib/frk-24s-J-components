@@ -41,10 +41,8 @@ export function PlayerForm({ onSubmit, children }) {
           placeholder="Player 2"
         />
       </div>
-	<div>  
     <footer className={styles.footerBtns}>
    {children}  </footer> 
-	  </div>
     </form>
   );
 }
