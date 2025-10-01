@@ -1,5 +1,5 @@
 /** @type { import('@storybook/react-vite').Preview } */
-import "../src/assets/fonts.css";
+
 const preview = {
   parameters: {
     controls: {
