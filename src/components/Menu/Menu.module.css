@@ -8,14 +8,12 @@ b {
   font-weight: 700;
 }
 .menu {
-  height: 600px;
-  width: 300px;
-  padding: 10px 20px;
+  width: 360px;
+  padding: 20px 40px;
   background-color: #222222;
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 0px;
   border-radius: 20px;
   z-index: 10;
 }
@@ -27,14 +25,17 @@ b {
   color: #ff9500;
   font-weight: 700;
   font-size: 30px;
+  margin-bottom: 16px;
 }
 .sectionTitle {
   color: #ff9500;
    font-size: 20px;
+   margin-bottom: 8px;
 }
 .textParagraph {
   font-weight: 300;
    font-size: 14px;
+   margin-bottom: 24px;
 }
 .textPlayerTitle {
   text-align: center;
