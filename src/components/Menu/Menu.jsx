@@ -3,62 +3,62 @@ import PlayerForm from "../PlayerForm/PlayerForm";
 import Button from "../Button/Button";
 import { useState } from "react";
 
-const Menu = ({className, startGame = true}) => {
-
-  const [openModal, setOpenModal] = useState(true)
+const Menu = ({ className, startGame = true }) => {
+  const [openModal, setOpenModal] = useState(true);
 
   const closeModal = (e) => {
-    e.stopPropagation()
-    setOpenModal(false)
-  }
-  
+    e.stopPropagation();
+    setOpenModal(false);
+  };
+
   return (
     <>
-    {openModal && <div className={styles.backdrop} onClick={closeModal}>
+      {openModal && (
+        <div className={styles.backdrop} onClick={closeModal}>
+          <dialog open className={`${styles.menu} ${className}`}>
+            <h1 className={styles.textHeader}>Gomoku</h1>
 
-    <dialog open className={`${styles.menu} ${className}`}>
-      <h1 className={styles.textHeader}>Gomoku</h1>
+            <h2 className={styles.sectionTitle}>about</h2>
 
-      <h2 className={styles.sectionTitle}>about</h2>
+            <p className={styles.textParagraph}>
+              <b>Gomoku (五目並べ)</b> means “five in a row” and has its origins
+              in China over 1000 years ago. It became very popular in Japan in
+              the 1600s and later spread worldwide.
+            </p>
 
-      <p className={styles.textParagraph}>
-        <b>Gomoku (五目並べ)</b> means “five in a row” and has its origins in China
-        over 1000 years ago. It became very popular in Japan in the 1600s and
-        later spread worldwide.
-      </p>
+            <h2 className={styles.sectionTitle}>how to play</h2>
 
-      <h2 className={styles.sectionTitle}>how to play</h2>
+            <ul className={styles.textParagraph}>
+              <li>
+                Two players take turns placing stones ( Black goes first).
+              </li>
+              <li>
+                The goal is to be the first to get five in a row – horizontally,
+                vertically, or diagonally.{" "}
+              </li>
+              <li>Stones cannot be moved or removed once placed.</li>
+              <li>
+                If the board is full with no winner, the game ends in a draw.
+              </li>
+            </ul>
 
-      <ul className={styles.textParagraph}>
-        <li>Two players take turns placing stones ( Black goes first).</li>
-        <li>
-          The goal is to be the first to get five in a row – horizontally,
-          vertically, or diagonally.{" "}
-        </li>
-        <li>Stones cannot be moved or removed once placed.</li>
-        <li>If the board is full with no winner, the game ends in a draw.</li>
-      </ul>
+            <h2 className={styles.textPlayerTitle}>Players</h2>
 
-      <h2 className={styles.textPlayerTitle}>Players</h2>
-
-
-      {!startGame ? 
-      <PlayerForm>
-        <Button text="Play Game"/> 
-      </PlayerForm> :
-
-      <PlayerForm>
-        <Button text="quit game"/>
-        <Button text="restart"/>
-        <Button text="resume" icon="▶" type="primary"/>
-      </PlayerForm>
-    }
-    
-  
-    </dialog>
-    </div>}
+            {!startGame ? (
+              <PlayerForm>
+                <Button text="Play Game" />
+              </PlayerForm>
+            ) : (
+              <PlayerForm>
+                <Button text="quit game" />
+                <Button text="restart" />
+                <Button text="resume" icon="▶" type="primary" />
+              </PlayerForm>
+            )}
+          </dialog>
+        </div>
+      )}
     </>
-    
   );
 };
 export default Menu;

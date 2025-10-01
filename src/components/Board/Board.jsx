@@ -21,32 +21,32 @@ const Board = ({
   const currentColor = playerTurn === 1 ? "black" : "white";
 
   return (
-    <div className={styles.boardWrapper}>
-      <div className={`${styles.board} ${className}`} onClick={handleCellClick}>
-
+    <div className={styles.boardWrapper} onClick={handleCellClick}>
+      <div className={`${styles.board} ${className}`}>
         <div className={styles.cells}>
           {cellsToRender.map((_, idx) => (
             <Cell
               key={idx}
               disabled={!gameStarted}
               initialColor={currentColor}
+              handleCellClick={handleCellClick}
             />
           ))}
         </div>
 
         {/* Mid Game Menu story */}
-        {!gameStarted && !gameEnded && (
+        {/* {!gameStarted && !gameEnded && (
           <div className={styles.menu}>
             <Menu startGame={largeMenu} />{" "}
           </div>
-        )}
+        )} */}
 
         {/* Victory Screen story */}
-        {gameEnded && gameStarted && (
+        {/* {gameEnded && gameStarted && (
           <div className={styles.scoreScreen}>
             <VictoryScreen />
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

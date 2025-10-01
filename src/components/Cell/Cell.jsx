@@ -7,6 +7,7 @@ export default function Cell({
   isActivated = false,
   onActivate,
   disabled,
+  handleCellClick,
 }) {
   const clickLock = useRef(false);
 
@@ -39,10 +40,10 @@ export default function Cell({
   console.log(`activated: ${active}. Color: ${color}`);
 
   const handleClick = () => {
-    alert("clicked cell");
-    if (clickLock.current || active || disabled) {
-      return console.error("Button has already been used.");
-    }
+    console.log("clicked cell");
+    // if (clickLock.current || active || disabled) {
+    //   return console.error("Button has already been used.");
+    // }
     clickLock.current = true;
 
     if (!active) {
@@ -63,7 +64,6 @@ export default function Cell({
         type="button"
         onClick={handleClick}
         className={`${styles.cell} ${active && styles.active}`}
-        disabled={disabled || active}
       >
         {active && <Brick color={color} aria-pressed={active} />}
       </button>
