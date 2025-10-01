@@ -12,11 +12,11 @@ export const Winner = {
 };
 
 export const White = {
-  args: { text: "WHITE" },
+  args: { text: "WHITE", playerTurn: 2 },
 };
 
 export const Black = {
-  args: { text: "BLACK" },
+  args: { text: "BLACK", playerTurn: 1 },
 };
 
 export const Error404 = {
