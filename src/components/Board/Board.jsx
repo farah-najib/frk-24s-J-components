@@ -19,7 +19,7 @@ const Board = ({
   const currentColor = playerTurn === 1 ? "black" : "white";
 
   return (
-    <div className={styles.boardWrapper} onClick={handleCellClick}>
+    <div className={styles.boardWrapper}>
       <div className={`${styles.board} ${className}`}>
         <div className={styles.cells}>
           {cellsToRender.map((_, idx) => (

@@ -1,6 +1,6 @@
 .brick {
-  width: var(--brick-size, 88%);   /* global storlek (default) */
-  height: var(--brick-size, 88%);
+  width: var(--brick-size, 75%);   /* global storlek (default) */
+  height: var(--brick-size, 75%);
   border-radius: 50%;
   z-index: 1;
 }

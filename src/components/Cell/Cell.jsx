@@ -6,7 +6,6 @@ export default function Cell({
   initialColor = "black",
   isActivated = false,
   onActivate,
-  disabled,
   handleCellClick,
 }) {
   const clickLock = useRef(false);
@@ -49,7 +48,7 @@ export default function Cell({
     if (!active) {
       setActive(true);
       setColor(safeColor);
-
+      handleCellClick()
       onActivate?.(safeColor);
     }
 
