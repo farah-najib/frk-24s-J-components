@@ -2,12 +2,12 @@ import styles from "./Menu.module.css";
 import PlayerForm from "../PlayerForm/PlayerForm";
 import Button from "../Button/Button";
 
-const Menu = ({ className, startGame = true, closeModal, openModal }) => {
+const Menu = ({ className, startGame = true, toggleModal, openModal }) => {
 
   return (
     <>
       {openModal && (
-        <div className={styles.backdrop} onClick={closeModal}>
+        <div className={styles.backdrop} onClick={toggleModal}>
           <dialog open className={`${styles.menu} ${className}`} onClick={(e) => e.stopPropagation()}>
             <h1 className={styles.textHeader}>Gomoku</h1>
 

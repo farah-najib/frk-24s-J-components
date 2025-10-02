@@ -2,7 +2,7 @@ import styles from "./Button.module.css";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
-const Button = ({ text = "Click me", icon, type, draggable = false }) => {
+const Button = ({ text = "Click me", icon, type, draggable = false, handleClick}) => {
   if (typeof text !== "string") {
     return <p>text needs to be of type string</p>;
   }
@@ -20,20 +20,17 @@ const Button = ({ text = "Click me", icon, type, draggable = false }) => {
         // Dra utan att den ska registrera en klick
         onDragStart: () => (dragged.current = true),
         onDragEnd: () => {
-          setTimeout(() => (dragged.current = false), 0);
+          setTimeout(() => (dragged.current = false), 100);
         },
       }
     : {};
 
-  const handleClick = (e) => {
-    if (draggable && dragged.current) return;
-
-    alert("Hello gomoku");
-  };
-
   return (
     <Element
-      className={primaryButton ? `${styles.primary}` : `${styles.secondary}`}
+      className={`
+        ${primaryButton ? styles.primary : styles.secondary}
+        ${draggable ? styles.draggable : ''}
+        `}
       {...dragProps}
       onClick={handleClick}
     >

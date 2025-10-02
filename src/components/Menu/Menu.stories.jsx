@@ -7,7 +7,11 @@ export default {
 }
 
 // Default story
-export const Default = () => <Menu />
+export const Default = {
+    args: {
+        className: true
+    }
+}
 
 // Another variation
 export const BreakMyComponent = () => <Menu />

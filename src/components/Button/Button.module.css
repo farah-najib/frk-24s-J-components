@@ -7,6 +7,8 @@ button {
 	height: 36px;
 	border-radius: 10px;
 	font-weight: bold;
+	z-index: 2;
+	cursor: pointer;
 }
 
 .primary {
@@ -23,5 +25,13 @@ button {
 	border: 1px solid white;
 	outline: 1px solid white;
 	outline-offset: 2px; 
+}
+
+.draggable {
+	color: #FF9500;
+	cursor: grab; 
+	position: absolute;
+	top: 20dvh;
+	right: 20vw;
 }
 
