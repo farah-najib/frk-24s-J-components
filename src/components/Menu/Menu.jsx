@@ -1,15 +1,8 @@
 import styles from "./Menu.module.css";
 import PlayerForm from "../PlayerForm/PlayerForm";
 import Button from "../Button/Button";
-import { useState } from "react";
 
-const Menu = ({ className, startGame = true }) => {
-  const [openModal, setOpenModal] = useState(true);
-
-  const closeModal = (e) => {
-    e.stopPropagation();
-    setOpenModal(false);
-  };
+const Menu = ({ className, startGame = true, closeModal, openModal }) => {
 
   return (
     <>
