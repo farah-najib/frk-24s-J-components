@@ -9,7 +9,6 @@ const Board = ({
   boardTiles,
   className = "",
   gameStarted = true,
-  brickColor,
 }) => {
   const cellsToRender = new Array(boardTiles).fill(null);
 
@@ -23,10 +22,8 @@ const Board = ({
             <Cell
               key={idx}
               cellIndex={idx}
-              disabled={!gameStarted}
-              initialColor={currentColor}
               handleCellClick={handleCellClick}
-              brickColor={brickColor}
+              moveColor={currentColor}
             />
           ))}
         </div>
