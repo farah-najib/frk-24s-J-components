@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-=======
-.board {
-    display: grid;
-    margin: 0 auto;
-    padding: 0;
-    width: 90vmin;
-    height: 90vmin;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-    background: #474747;
-    max-width: 800px;
-    max-height: 800px;
->>>>>>> c51b7a9 (board css)
-
 .board {
   display: grid;
   margin: 0;
@@ -25,7 +10,7 @@
   position: relative;
 }
 
-<<<<<<< HEAD
+
 .playerOverlay,
 .cells,
 .menu,
