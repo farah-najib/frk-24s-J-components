@@ -10,11 +10,8 @@ const Board = ({
   className = "",
   gameStarted = true,
 }) => {
-  let cellsToRender = [];
 
-  for (let i = 0; i <= boardTiles; i++) {
-    cellsToRender.push(i);
-  }
+  const cellsToRender = new Array(boardTiles).fill(null)
 
   const currentColor = playerTurn === 1 ? "black" : "white";
 
