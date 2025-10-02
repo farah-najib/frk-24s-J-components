@@ -8,13 +8,14 @@ const Button = ({
   type,
   draggable = false,
   handleClick,
+  style
 }) => {
   if (typeof text !== "string") {
     return <p>text needs to be of type string</p>;
   }
   const dragged = useRef(false);
 
-  const primaryButton = type === "primary";
+  const primaryButton = style === "primary";
 
   const Element = draggable ? motion.button : "button";
 

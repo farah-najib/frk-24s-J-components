@@ -54,9 +54,11 @@ export function PlayerForm({ gameState, toggleModal, startGame }) {
       </div>
       {err && <p className={styles.err}>{err}</p>}
       {gameState === "menu" && (
-        <Button type="submit" text="Play game" handleClick={handleSubmit}>
+        <footer className={styles.footerBtns}>
+          <Button type="submit" text="Play game" handleClick={handleSubmit} style={"primary"}>
           Play Game
         </Button>
+        </footer>
       )}
       {gameState === "playing" && (
         <footer className={styles.footerBtns}>
@@ -65,7 +67,7 @@ export function PlayerForm({ gameState, toggleModal, startGame }) {
           <Button
             text="resume"
             icon="▶"
-            type="primary"
+            style="primary"
             onClick={toggleModal}
           />{" "}
         </footer>
