@@ -7,9 +7,9 @@ export default function Cell({
   isActivated = false,
   onActivate,
   handleCellClick,
+  cellIndex,
+  brickColor,
 }) {
-  const clickLock = useRef(false);
-
   const safeColor = (() => {
     const x = String(initialColor).toLowerCase();
     if (x === "black" || x === "white") return x;
@@ -36,19 +36,11 @@ export default function Cell({
     if (!active) setColor(safeColor);
   }, [safeColor]);
 
-  console.log(`activated: ${active}. Color: ${color}`);
-
   const handleClick = () => {
-    console.log("clicked cell");
-    // if (clickLock.current || active || disabled) {
-    //   return console.error("Button has already been used.");
-    // }
-    clickLock.current = true;
-
     if (!active) {
       setActive(true);
       setColor(safeColor);
-      handleCellClick()
+      handleCellClick();
       onActivate?.(safeColor);
     }
 
@@ -61,10 +53,10 @@ export default function Cell({
     <>
       <button
         type="button"
-        onClick={handleClick}
+        onClick={() => handleCellClick(cellIndex)}
         className={`${styles.cell} ${active && styles.active}`}
       >
-        {active && <Brick color={color} aria-pressed={active} />}
+        {active && <Brick color={brickColor} aria-pressed={active} />}
       </button>
     </>
   );

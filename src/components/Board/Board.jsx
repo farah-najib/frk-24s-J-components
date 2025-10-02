@@ -9,9 +9,9 @@ const Board = ({
   boardTiles,
   className = "",
   gameStarted = true,
+  brickColor,
 }) => {
-
-  const cellsToRender = new Array(boardTiles).fill(null)
+  const cellsToRender = new Array(boardTiles).fill(null);
 
   const currentColor = playerTurn === 1 ? "black" : "white";
 
@@ -22,26 +22,14 @@ const Board = ({
           {cellsToRender.map((_, idx) => (
             <Cell
               key={idx}
+              cellIndex={idx}
               disabled={!gameStarted}
               initialColor={currentColor}
               handleCellClick={handleCellClick}
+              brickColor={brickColor}
             />
           ))}
         </div>
-
-        {/* Mid Game Menu story */}
-        {/* {!gameStarted && !gameEnded && (
-          <div className={styles.menu}>
-            <Menu startGame={largeMenu} />{" "}
-          </div>
-        )} */}
-
-        {/* Victory Screen story */}
-        {/* {gameEnded && gameStarted && (
-          <div className={styles.scoreScreen}>
-            <VictoryScreen />
-          </div>
-        )} */}
       </div>
     </div>
   );
