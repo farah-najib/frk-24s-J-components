@@ -3,10 +3,10 @@
   display: grid;
   margin: 0;
   padding: 0;
-  width: min(95vmin, 600px);
-  height: min(95vmin, 600px);
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(9, 1fr);
+  width: calc(66px * 20);
+  height: calc(66px * 15);
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(15, 1fr);
   background: #474747;
   position: relative;
 }
@@ -36,8 +36,8 @@
 
 .cells {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(9, 1fr);
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(15, 1fr);
   z-index: 2;
 }
 
