@@ -4,8 +4,9 @@ import Menu from "../Menu";
 import VictoryScreen from "../VictoryScreen";
 
 const Board = ({
+  gameState,
   playerTurn,
-  handleCellClick,
+  placeMove,
   boardTiles,
   className = "",
   gameStarted = true,
@@ -22,8 +23,9 @@ const Board = ({
             <Cell
               key={idx}
               cellIndex={idx}
-              handleCellClick={handleCellClick}
+              placeMove={placeMove}
               moveColor={currentColor}
+              gameState={gameState}
             />
           ))}
         </div>

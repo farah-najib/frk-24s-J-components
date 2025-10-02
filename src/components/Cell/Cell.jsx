@@ -2,15 +2,16 @@ import styles from "./Cell.module.css";
 import { useState, useRef, useEffect } from "react";
 import Brick from "../Brick/Brick.jsx";
 
-export default function Cell({ handleCellClick, cellIndex, moveColor }) {
+export default function Cell({ placeMove, cellIndex, moveColor, gameState }) {
   const [active, setActive] = useState(false);
   const [placedBrickColor, setPlacedBrickColor] = useState(null);
 
   const onClick = () => {
+    if (gameState !== "playing") return;
     if (active) return;
     setActive(true);
     setPlacedBrickColor(moveColor);
-    handleCellClick(cellIndex);
+    placeMove(cellIndex);
   };
 
   return (
