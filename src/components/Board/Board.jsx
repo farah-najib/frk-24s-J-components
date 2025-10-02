@@ -2,6 +2,7 @@ import styles from "./Board.module.css";
 import Cell from "../Cell/Cell.jsx";
 import Menu from "../Menu";
 import VictoryScreen from "../VictoryScreen";
+import Timer from "../Timer/Timer.jsx";
 
 const Board = ({
   gameState,
