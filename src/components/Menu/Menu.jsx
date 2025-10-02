@@ -2,13 +2,23 @@ import styles from "./Menu.module.css";
 import PlayerForm from "../PlayerForm/PlayerForm";
 import Button from "../Button/Button";
 
-const Menu = ({ className, startGame = false, toggleModal, openModal }) => {
-
+const Menu = ({
+  className,
+  toggleModal,
+  openModal,
+  gameState,
+  setGameState,
+  startGame,
+}) => {
   return (
     <>
       {openModal && (
         <div className={styles.backdrop} onClick={toggleModal}>
-          <dialog open className={`${styles.menu} ${className}`} onClick={(e) => e.stopPropagation()}>
+          <dialog
+            open
+            className={`${styles.menu} ${className}`}
+            onClick={(e) => e.stopPropagation()}
+          >
             <h1 className={styles.textHeader}>Gomoku</h1>
 
             <h2 className={styles.sectionTitle}>about</h2>
@@ -37,17 +47,12 @@ const Menu = ({ className, startGame = false, toggleModal, openModal }) => {
 
             <h2 className={styles.textPlayerTitle}>Players</h2>
 
-            {!startGame ? (
-              <PlayerForm>
-                <Button text="Play Game" type="primary"/>
-              </PlayerForm>
-            ) : (
-              <PlayerForm>
-                <Button text="quit" icon="▶|"/>
-                <Button text="restart" icon="⟳"/>
-                <Button text="resume" icon="▶" type="primary" handleClick={toggleModal}/>
-              </PlayerForm>
-            )}
+            <PlayerForm
+              gameState={gameState}
+              setGameState={setGameState}
+              toggleModal={toggleModal}
+              startGame={startGame}
+            />
           </dialog>
         </div>
       )}
