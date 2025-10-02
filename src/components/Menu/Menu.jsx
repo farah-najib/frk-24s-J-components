@@ -45,7 +45,7 @@ const Menu = ({ className, startGame = true, toggleModal, openModal }) => {
               <PlayerForm>
                 <Button text="quit game" />
                 <Button text="restart" />
-                <Button text="resume" icon="▶" type="primary" />
+                <Button text="resume" icon="▶" type="primary" handleClick={toggleModal}/>
               </PlayerForm>
             )}
           </dialog>
