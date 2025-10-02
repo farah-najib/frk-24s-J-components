@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Input from "../Input/Input.jsx";
 import Brick from "../Brick/Brick";
 import styles from "./PlayerForm.module.css";
@@ -6,12 +6,25 @@ import styles from "./PlayerForm.module.css";
 export function PlayerForm({ onSubmit, children }) {
   const [p1, setP1] = useState("");
   const [p2, setP2] = useState("");
+  const [errMsg, setErrMsg] = useState("")
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setErrMsg("")
+    }, 2000);
+  
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [errMsg])
+  
 
 
   const handleSubmit = (e) => {
 	e.preventDefault();
 	 if(p1.length <= 0 || p2.length <= 0){
 		console.warn("empty strings are not allowed")
+		setErrMsg("Please fill in both player fields")
 		 return;
 	 }
 	  
@@ -41,6 +54,7 @@ export function PlayerForm({ onSubmit, children }) {
           placeholder="Player 2"
         />
       </div>
+      {errMsg && <p className={styles.errMsg}>{errMsg}</p>}
     <footer className={styles.footerBtns}>
    {children}  </footer> 
     </form>

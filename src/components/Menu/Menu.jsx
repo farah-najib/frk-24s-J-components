@@ -2,7 +2,7 @@ import styles from "./Menu.module.css";
 import PlayerForm from "../PlayerForm/PlayerForm";
 import Button from "../Button/Button";
 
-const Menu = ({ className, startGame = true, toggleModal, openModal }) => {
+const Menu = ({ className, startGame = false, toggleModal, openModal }) => {
 
   return (
     <>
@@ -39,7 +39,7 @@ const Menu = ({ className, startGame = true, toggleModal, openModal }) => {
 
             {!startGame ? (
               <PlayerForm>
-                <Button text="Play Game" />
+                <Button text="Play Game" type="primary"/>
               </PlayerForm>
             ) : (
               <PlayerForm>
