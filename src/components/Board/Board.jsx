@@ -4,22 +4,15 @@ import Menu from "../Menu";
 import VictoryScreen from "../VictoryScreen";
 import Timer from "../Timer/Timer.jsx";
 
-const Board = ({
-  gameState,
-  playerTurn,
-  placeMove,
-  boardRows,
-  boardCols,
-}) => {
-
+const Board = ({ gameState, playerTurn, placeMove, boardRows, boardCols }) => {
   const cols = Array.from({ length: boardCols }, (_, i) => i);
   const rows = Array.from({ length: boardRows }, (_, i) => i);
 
-  const currentColor = playerTurn === 1 ? "black" : "white"
+  const currentColor = playerTurn === 1 ? "black" : "white";
 
   return (
     <div className={styles.boardWrapper}>
-	{/* <div className={styles.topBard}>
+      {/* <div className={styles.topBard}>
 	  <Timer initialTime={120} onTimeUp={() => {
 		  alert("Time is up! Restarting game...")
 		  window.location.reload();
@@ -27,22 +20,22 @@ const Board = ({
 	  />
 	  </div> */}
 
-	<div className={styles.board}>
+      <div className={styles.board}>
         <div className={styles.cells}>
-          {rows.map((_, row) => (
-            cols.map((_, col) => 
-            
-            <Cell
-              key={`${col}-${row}`}
-              cellIndex={{
-                col: col,
-                row: row
-              }}
-              placeMove={placeMove}
-              moveColor={currentColor}
-              gameState={gameState}
-            />
-          )))}
+          {rows.map((_, row) =>
+            cols.map((_, col) => (
+              <Cell
+                key={`${col}-${row}`}
+                cellIndex={{
+                  col: col,
+                  row: row,
+                }}
+                placeMove={placeMove}
+                moveColor={currentColor}
+                gameState={gameState}
+              />
+            ))
+          )}
         </div>
       </div>
     </div>
