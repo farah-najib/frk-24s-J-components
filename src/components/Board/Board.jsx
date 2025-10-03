@@ -8,11 +8,14 @@ const Board = ({
   gameState,
   playerTurn,
   placeMove,
-  boardTiles,
+  boardRows,
+  boardCols,
 }) => {
-  const cellsToRender = new Array(boardTiles).fill(null);
 
-  const currentColor = playerTurn === 1 ? "black" : "white";
+  const cols = Array.from({ length: boardCols }, (_, i) => i);
+  const rows = Array.from({ length: boardRows }, (_, i) => i);
+
+  const currentColor = playerTurn === 1 ? "black" : "white"
 
   return (
     <div className={styles.boardWrapper}>
@@ -26,15 +29,20 @@ const Board = ({
 
 	<div className={styles.board}>
         <div className={styles.cells}>
-          {cellsToRender.map((_, idx) => (
+          {rows.map((_, row) => (
+            cols.map((_, col) => 
+            
             <Cell
-              key={idx}
-              cellIndex={idx}
+              key={`${col}-${row}`}
+              cellIndex={{
+                col: col,
+                row: row
+              }}
               placeMove={placeMove}
               moveColor={currentColor}
               gameState={gameState}
             />
-          ))}
+          )))}
         </div>
       </div>
     </div>
