@@ -9,8 +9,6 @@ const Board = ({
   playerTurn,
   placeMove,
   boardTiles,
-  className = "",
-  gameStarted = true,
 }) => {
   const cellsToRender = new Array(boardTiles).fill(null);
 
@@ -26,7 +24,7 @@ const Board = ({
 	  />
 	  </div>
 
-	<div className={`${styles.board} ${className}`}>
+	<div className={styles.board}>
         <div className={styles.cells}>
           {cellsToRender.map((_, idx) => (
             <Cell
