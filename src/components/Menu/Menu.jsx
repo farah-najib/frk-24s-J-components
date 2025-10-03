@@ -13,7 +13,7 @@ const Menu = ({
   return (
     <>
       {openModal && (
-        <div className={styles.backdrop} onClick={toggleModal}>
+        <div className={styles.backdrop} onClick={gameState !== "playing" ? undefined : toggleModal}>
           <dialog
             open
             className={`${styles.menu} ${className}`}
