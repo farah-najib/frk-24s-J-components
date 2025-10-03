@@ -5,9 +5,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  
   background: none;
   z-index: 200;
   border-radius: 0px;
   padding: 0;
+
+  cursor: url('/black.png') 16 16, pointer;
+}
+
+.cell:hover {
+  border-color: #FF9500;
 }
