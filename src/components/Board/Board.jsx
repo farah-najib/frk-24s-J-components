@@ -16,13 +16,13 @@ const Board = ({
 
   return (
     <div className={styles.boardWrapper}>
-	<div className={styles.topBard}>
+	{/* <div className={styles.topBard}>
 	  <Timer initialTime={120} onTimeUp={() => {
 		  alert("Time is up! Restarting game...")
 		  window.location.reload();
 	  }}
 	  />
-	  </div>
+	  </div> */}
 
 	<div className={styles.board}>
         <div className={styles.cells}>
