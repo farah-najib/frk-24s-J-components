@@ -1,8 +1,6 @@
 import styles from "./CustomPointer.module.css";
 
-export default function CustomPointer({ playerTurn = 1 }) {
-  const color = playerTurn === 1 ? "black" : "white";
-
+export default function CustomPointer({ color = "black" }) {
   return (
     <div
       className={`${styles.circle} ${
