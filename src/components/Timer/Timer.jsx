@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import styles from "./Timer.module.css";
 
 export default function Timer({ initialTime = 120, onTimeUp }) {
 	const [timeLeft, setTimeLeft] = useState(initialTime);
@@ -8,7 +9,7 @@ export default function Timer({ initialTime = 120, onTimeUp }) {
 			onTimeUp?.();
 			return;
 		}
-	const timeId= setInterval(() => {
+	const timerId= setInterval(() => {
 		setTimeLeft((prev) => prev -1);
 	}, 1000);
 	
@@ -18,7 +19,7 @@ export default function Timer({ initialTime = 120, onTimeUp }) {
 	const minutes = Math.floor(timeLeft / 60);
 	const seconds = timeLeft % 60;
 
-	const timerClass = `${styles.timer} ${timerLeft <= 10 ? styles.warning : ""}`;
+	const timerClass = `${styles.timer} ${timeLeft <= 10 ? styles.warning : ""}`;
 
 
 	return(

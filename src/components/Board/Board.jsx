@@ -18,7 +18,15 @@ const Board = ({
 
   return (
     <div className={styles.boardWrapper}>
-      <div className={`${styles.board} ${className}`}>
+	<div className={styles.topBard}>
+	  <Timer initialTime={120} onTimeUp={() => {
+		  alert("Time is up! Restarting game...")
+		  window.location.reload();
+	  }}
+	  />
+	  </div>
+
+	<div className={`${styles.board} ${className}`}>
         <div className={styles.cells}>
           {cellsToRender.map((_, idx) => (
             <Cell
