@@ -41,9 +41,24 @@
   z-index: 2;
 }
 
+
+.boardWrapper{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+
+}
+
 .topBar {
+	position: relative;
 	width: 100%;
+	height: 60px;
 	display: flex;
 	justify-content: flex-end;
-	padding-right: 20px;
+	padding-right: 0 40px;
+	align-items: center;
+	box-sizing: border-box;
 }
