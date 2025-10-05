@@ -13,7 +13,7 @@ const Board = ({ gameState, playerTurn, placeMove, boardRows, boardCols }) => {
   return (
     <div className={styles.boardWrapper}>
       {/* <div className={styles.topBard}>
-	  <Timer initialTime={120} onTimeUp={() => {
+	  <Timer initialTime={300} onTimeUp={() => {
 		  alert("Time is up! Restarting game...")
 		  window.location.reload();
 	  }}
