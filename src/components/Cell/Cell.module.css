@@ -15,7 +15,8 @@
 }
 
 .cell:hover {
-  border-color: #FF9500;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease;
+  border-color: #ff9500;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: filter 0.2s ease, border-color 0.2s ease;
+  
 }
