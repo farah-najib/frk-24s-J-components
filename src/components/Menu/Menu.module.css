@@ -14,11 +14,13 @@ b {
   width: 360px;
   padding: 20px 40px;
   background-color: #222222;
+  box-shadow: 0px 0px 60px #22222240;
   color: white;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   z-index: 10;
+  border: none;
 }
 .menu > * {
   margin: 0;

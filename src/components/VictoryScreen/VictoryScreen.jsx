@@ -1,7 +1,7 @@
 import styles from './VictoryScreen.module.css';
 import Button from '../Button/Button'
 
-const VictoryScreen = ({player="Player 1"}) => {
+const VictoryScreen = ({player, onEnter}) => {
 
 	if (typeof(player) !== "string") {
 		return (
@@ -9,14 +9,18 @@ const VictoryScreen = ({player="Player 1"}) => {
 		)
 	}
 
+	const name = player.toUpperCase()
+
 	return (
-		<dialog open className={styles.dialog}>
-			<h1>{player} wins!</h1>
-			<div className={styles.buttonContainer}>
-				<Button text="Quit"/>
-				<Button text="Play again?" type="primary"/>
-			</div>
-		</dialog>
+		<div className={styles.backdrop} onMouseEnter={onEnter(true)}>
+			<dialog open className={styles.dialog}>
+				<h1>{name} wins!</h1>
+				<div className={styles.buttonContainer}>
+					<Button text="Quit"/>
+					<Button text="Play again?" style="primary"/>
+				</div>
+			</dialog>
+		</div>
 	)
 }
 
