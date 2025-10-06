@@ -4,7 +4,7 @@ import Brick from "../Brick/Brick";
 import styles from "./PlayerForm.module.css";
 import Button from "../Button/Button.jsx";
 
-export function PlayerForm({ gameState, toggleModal, startGame }) {
+export function PlayerForm({ startGame, children }) {
   const [p1, setP1] = useState("");
   const [p2, setP2] = useState("");
   const [err, setErr] = useState("");
@@ -22,16 +22,11 @@ export function PlayerForm({ gameState, toggleModal, startGame }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const name1 = p1.trim();
-    const name2 = p2.trim();
-
-    if (!name1 || !name2) return setErr("Please fill in both player fields");
-
-    startGame({ p1: name1, p2: name2 });
+    startGame({ p1, p2 });
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className={styles.FormWrapper}>
         <Brick color="black" />
         <Input
@@ -53,25 +48,8 @@ export function PlayerForm({ gameState, toggleModal, startGame }) {
         />
       </div>
       {err && <p className={styles.err}>{err}</p>}
-      {gameState === "menu" && (
-        <footer className={styles.footerBtns}>
-          <Button type="submit" text="Play game" handleClick={handleSubmit} style={"primary"}>
-          Play Game
-        </Button>
-        </footer>
-      )}
-      {gameState === "playing" && (
-        <footer className={styles.footerBtns}>
-          <Button text="quit" icon="▶|" />
-          <Button text="restart" icon="⟳" />
-          <Button
-            text="resume"
-            icon="▶"
-            style="primary"
-            onClick={toggleModal}
-          />{" "}
-        </footer>
-      )}
+
+      <footer className={styles.footerBtns}>{children}</footer>
     </form>
   );
 }
