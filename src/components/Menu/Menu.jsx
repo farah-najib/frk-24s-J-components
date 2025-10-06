@@ -46,8 +46,6 @@ const Menu = ({
               </li>
             </ul>
 
-            <h2 className={styles.textPlayerTitle}>Players</h2>
-
             {children}
           </dialog>
         </div>
