@@ -34,7 +34,7 @@ export function PlayerForm({ startGame, children }) {
           label="Player 1"
           value={p1}
           onChange={setP1}
-          placeholder="Player 1"
+          placeholder="Black"
         />
       </div>
       <div className={styles.FormWrapper}>
@@ -44,7 +44,7 @@ export function PlayerForm({ startGame, children }) {
           label="Player 2"
           value={p2}
           onChange={setP2}
-          placeholder="Player 2"
+          placeholder="White"
         />
       </div>
       {err && <p className={styles.err}>{err}</p>}
