@@ -7,13 +7,16 @@ const Menu = ({
   toggleModal,
   openModal,
   gameState,
-  setGameState,
-  startGame,
+
+  children,
 }) => {
   return (
     <>
       {openModal && (
-        <div className={styles.backdrop} onClick={gameState !== "playing" ? undefined : toggleModal}>
+        <div
+          className={styles.backdrop}
+          onClick={gameState !== "playing" ? undefined : toggleModal}
+        >
           <dialog
             open
             className={`${styles.menu} ${className}`}
@@ -28,7 +31,6 @@ const Menu = ({
               in China over 1000 years ago. It became very popular in Japan in
               the 1600s and later spread worldwide.
             </p>
-
 
             <h2 className={styles.sectionTitle}>how to play</h2>
 
@@ -48,12 +50,7 @@ const Menu = ({
 
             <h2 className={styles.textPlayerTitle}>Players</h2>
 
-            <PlayerForm
-              gameState={gameState}
-              setGameState={setGameState}
-              toggleModal={toggleModal}
-              startGame={startGame}
-            />
+            {children}
           </dialog>
         </div>
       )}
