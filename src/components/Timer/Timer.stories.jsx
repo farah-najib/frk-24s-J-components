@@ -7,10 +7,10 @@ export default {
 
 export const Default = () => <Timer initialTime={120} />;
 
-export const WithOnTimeUp = () => (
-	<Timer
-	initialTime={10}
-	onTimeUp={() => alert("Time is up!")}
-	/>
-);
+export const WithOnTimeUp = {
+	args:{
+		initialTime: 10,
+		onTimeUp: () => alert("Time is up!")
+	}
+}
 

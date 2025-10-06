@@ -1,6 +1,4 @@
 import styles from "./Menu.module.css";
-import PlayerForm from "../PlayerForm/PlayerForm";
-import Button from "../Button/Button";
 
 const Menu = ({
   className,

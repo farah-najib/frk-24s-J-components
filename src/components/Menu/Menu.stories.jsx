@@ -9,7 +9,7 @@ export default {
 // Default story
 export const Default = {
     args: {
-        className: true
+        openModal: true
     }
 }
 

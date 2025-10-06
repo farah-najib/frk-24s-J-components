@@ -1,7 +1,7 @@
 import styles from './VictoryScreen.module.css';
 import Button from '../Button/Button'
 
-const VictoryScreen = ({player, playAgain}) => {
+const VictoryScreen = ({player="Player 1", playAgain}) => {
 
 	if (typeof(player) !== "string") {
 		return (

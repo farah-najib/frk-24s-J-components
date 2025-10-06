@@ -10,7 +10,11 @@ export default {
   },
 };
 
-export const Default = {};
+export const Default = {
+  args:{
+    playerTurn:2
+  }
+};
 
 export const Winner = { args: { text: "WINNER" } };
 
