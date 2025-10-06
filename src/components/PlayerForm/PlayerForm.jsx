@@ -2,9 +2,14 @@ import { useEffect, useState } from "react";
 import Input from "../Input/Input.jsx";
 import Brick from "../Brick/Brick";
 import styles from "./PlayerForm.module.css";
-import Button from "../Button/Button.jsx";
 
-export function PlayerForm({ startGame, children }) {
+export function PlayerForm({
+  startGame,
+  children,
+  players,
+  showForm,
+  setShowForm,
+}) {
   const [p1, setP1] = useState("");
   const [p2, setP2] = useState("");
   const [err, setErr] = useState("");
@@ -23,6 +28,9 @@ export function PlayerForm({ startGame, children }) {
     e.preventDefault();
 
     startGame({ p1, p2 });
+    setP2("");
+    setP1("");
+    setShowForm(true);
   };
 
   return (
@@ -34,7 +42,7 @@ export function PlayerForm({ startGame, children }) {
           label="Player 1"
           value={p1}
           onChange={setP1}
-          placeholder="Black"
+          placeholder={players[1].name}
         />
       </div>
       <div className={styles.FormWrapper}>
@@ -44,9 +52,10 @@ export function PlayerForm({ startGame, children }) {
           label="Player 2"
           value={p2}
           onChange={setP2}
-          placeholder="White"
+          placeholder={players[2].name}
         />
       </div>
+
       {err && <p className={styles.err}>{err}</p>}
 
       <footer className={styles.footerBtns}>{children}</footer>
