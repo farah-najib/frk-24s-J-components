@@ -16,5 +16,6 @@
 
 .cell:hover {
   border-color: #FF9500;
-  
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
 }

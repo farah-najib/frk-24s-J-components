@@ -1,5 +1,5 @@
 import styles from "./Cell.module.css";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import Brick from "../Brick/Brick.jsx";
 
 export default function Cell({ placeMove, cellIndex, moveColor, gameState }) {
