@@ -9,13 +9,14 @@ button {
 	font-weight: bold;
 	z-index: 2;
 	cursor: pointer;
+	
 }
 
 .primary {
 	background-color: #FF9500;
 	color: black;
-	border: 1px solid #222222;
-	outline: 1px solid white;
+	border: 1px solid #000000;
+	outline: 1px solid #FF9500;
 	outline-offset: 2px; 
 }
 
@@ -28,11 +29,48 @@ button {
 }
 
 .draggable {
+	background-color: #000000;
 	color: #FF9500;
+	border: 1px solid #ffffff;
+	outline: 1px solid #000000;
 	cursor: grab; 
 	position: absolute;
 	top: 20dvh;
 	right: 20vw;
-	outline: 2px solid #222222;
+
 }
 
+/* Standard hover: liten ljusning */
+button:hover {
+  transition: all 0.2s ease;
+}
+
+/* För primary */
+.primary:hover {
+  background-color: #ffffff;
+	color: black;
+	border: 1px solid #ffffff;
+	outline: 2px solid white;
+	outline-offset: 2px;
+	
+}
+
+/* För secondary */
+.secondary:hover {
+  background-color: #ffffff;
+	color: black;
+	border: 1px solid #ffffff;
+	outline: 2px solid white;
+	outline-offset: 2px;
+	
+}
+
+/* För draggable */
+.draggable:hover {
+  cursor: grabbing;
+	color: #000000;
+  transform: scale(1.10);
+	border: 1px solid #000000;
+	outline: 2px solid #FF9500;
+	
+}
