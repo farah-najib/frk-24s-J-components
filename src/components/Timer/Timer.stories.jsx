@@ -5,7 +5,7 @@ export default {
 	component: Timer,
 };
 
-export const Default = () => <Timer initialTime={120} />;
+export const Default = () => <Timer initialTime={300} />;
 
 export const WithOnTimeUp = {
 	args:{
