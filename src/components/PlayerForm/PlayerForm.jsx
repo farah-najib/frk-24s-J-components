@@ -34,35 +34,39 @@ export function PlayerForm({
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      {showForm && (
-        <>
-          <div className={styles.FormWrapper}>
-            <Brick color="black" />
-            <Input
-              id="p1"
-              label="Player 1"
-              value={p1}
-              onChange={setP1}
-              placeholder={players[1].name}
-            />
-          </div>
-          <div className={styles.FormWrapper}>
-            <Brick color="white" />
-            <Input
-              id="p2"
-              label="Player 2"
-              value={p2}
-              onChange={setP2}
-              placeholder={players[2].name}
-            />
-          </div>
-        </>
-      )}
-      {err && <p className={styles.err}>{err}</p>}
+    <>
+      {" "}
+      <form onSubmit={handleSubmit}>
+        {!showForm && (
+          <>
+            <h2 className={styles.textPlayerTitle}>Players</h2>
+            <div className={styles.FormWrapper}>
+              <Brick color="black" />
+              <Input
+                id="p1"
+                label="Player 1"
+                value={p1}
+                onChange={setP1}
+                placeholder={players[1].name}
+              />
+            </div>
+            <div className={styles.FormWrapper}>
+              <Brick color="white" />
+              <Input
+                id="p2"
+                label="Player 2"
+                value={p2}
+                onChange={setP2}
+                placeholder={players[2].name}
+              />
+            </div>
+          </>
+        )}
+        {err && <p className={styles.err}>{err}</p>}
 
-      <footer className={styles.footerBtns}>{children}</footer>
-    </form>
+        <footer className={styles.footerBtns}>{children}</footer>
+      </form>
+    </>
   );
 }
 export default PlayerForm;
