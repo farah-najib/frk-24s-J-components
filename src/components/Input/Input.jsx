@@ -12,7 +12,7 @@ export function Input({
       .replace(/[^A-Za-zÅÄÖåäö\- ]/g, "")
       .replace(/\s+/g, " ")
       .trim()
-      .slice(0, 13);
+      .slice(0, 10);
 
   return (
     <div className={styles.inputWrapper}>
