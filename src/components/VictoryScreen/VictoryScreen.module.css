@@ -20,7 +20,7 @@ dialog {
 	border: none;
 }
 
-dialog > h1 {
+form > h1 {
 	height: auto;
 	padding: 0;
 	margin-bottom: 60px;
@@ -32,4 +32,8 @@ dialog > h1 {
 	display: flex;
 	gap: 12px;
 	justify-content: space-between;
+}
+
+form {
+	all: unset;
 }
