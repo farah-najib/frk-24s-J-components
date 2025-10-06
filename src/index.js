@@ -9,3 +9,4 @@ export { default as PlayerForm } from "./components/PlayerForm";
 export { default as VictoryScreen } from "./components/VictoryScreen";
 export { default as BackgroundBanner } from "./components/BackgroundBanner";
 export { default as Timer } from "./components/Timer";
+export { default as CustomPointer } from "./components/CustomPointer";
