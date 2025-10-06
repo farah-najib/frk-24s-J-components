@@ -1,0 +1,68 @@
+.mult4 {
+  height: 200px;
+  width: 200px;
+  background-color: #22222240;
+  display: flex;
+  flex-direction: column;
+}
+
+.mul4stripe {
+  height: 200px;
+  width: 200px;
+}
+
+/* Stripe 1 */
+.mul4stripe1 {
+  animation: mul4stripe1 3s infinite ease-in-out;
+}
+
+@keyframes mul4stripe1 {
+  0%, 60%, 100% {
+    background-color: #ff9500;
+  }
+  10%, 50% {
+    background-color: #22222240;
+  }
+}
+
+/* Stripe 2 */
+.mul4stripe2 {
+  animation: mul4stripe2 3s infinite ease-in-out;
+}
+
+@keyframes mul4stripe2 {
+  0%, 10%, 70%, 100% {
+    background-color:#ff9500;
+  }
+  20%, 60% {
+    background-color: #22222240;
+  }
+}
+
+/* Stripe 3 */
+.mul4stripe3 {
+  animation: mul4stripe3 3s infinite ease-in-out;
+}
+
+@keyframes mul4stripe3 {
+  0%, 20%, 80%, 100% {
+    background-color: #ff9500;
+  }
+  30%, 70% {
+    background-color: #22222240;
+  }
+}
+
+/* Stripe 4 */
+.mul4stripe4 {
+  animation: mul4stripe4 3s infinite ease-in-out;
+}
+
+@keyframes mul4stripe4 {
+  0%, 30%, 90%, 100% {
+    background-color: #ff9500;
+  }
+  40%, 80% {
+    background-color: #22222240;
+  }
+}
