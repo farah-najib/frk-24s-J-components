@@ -23,7 +23,7 @@ export default function Timer({ initialTime = 300, onTimeUp }) {
 
 
 	return(
-		<div style={{ fontSize: "24px", color: "black" }}>
+		<div className={ timerClass}>
 		{minutes}:{seconds < 10 ? `0${seconds}` : seconds}
 		</div>
 	);
