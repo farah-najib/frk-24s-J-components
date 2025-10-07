@@ -1,4 +1,4 @@
-import styles from "./brick.module.css";
+import styles from "./Brick.module.css";
 
 export const Brick = ({ color = "black" }) => {
   const allowedColors = ["black", "white"];
