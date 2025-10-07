@@ -1,4 +1,3 @@
-// notify-dispatch.mjs eller .js om du har "type": "module" i package.json
 
 import https from "https";
 import { argv, env, exit, stdout } from "process";
