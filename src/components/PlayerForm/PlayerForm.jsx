@@ -1,34 +1,41 @@
-import { useEffect, useState } from "react";
-import Input from "../Input/Input.jsx";
-import Brick from "../Brick/Brick";
-import styles from "./PlayerForm.module.css";
+import { useEffect, useState } from 'react';
+import Input from '../Input/Input.jsx';
+import Brick from '../Brick/Brick';
+import styles from './PlayerForm.module.css';
 
 export function PlayerForm({ startGame, children, players, showForm }) {
-  const [p1, setP1] = useState("");
-  const [p2, setP2] = useState("");
-  const [err, setErr] = useState("");
+  const [p1, setP1] = useState('');
+  const [p2, setP2] = useState('');
+  // const [err, setErr] = useState('');
+
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => {
+  //     setErr('');
+  //   }, 2000);
+
+  //   return () => {
+  //     clearTimeout(timeout);
+  //   };
+  // }, [err]); what is this?
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setErr("");
-    }, 2000);
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [err]);
+    if (showForm) {
+      setP1(players?.[1]?.name ?? '');
+      setP2(players?.[2]?.name ?? '');
+    }
+  }, [showForm, players]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     startGame({ p1, p2 });
-    setP2("");
-    setP1("");
+    setP2('');
+    setP1('');
   };
 
   return (
     <>
-      {" "}
+      {' '}
       <form onSubmit={handleSubmit}>
         {showForm && (
           <>
@@ -39,8 +46,8 @@ export function PlayerForm({ startGame, children, players, showForm }) {
                 id="p1"
                 label="Player 1"
                 value={p1}
-                onChange={setP1}
-                placeholder={players[1].name}
+                onChange={(e) => setP1(e)}
+                placeholder={players?.[1]?.name ?? 'Black'}
               />
             </div>
             <div className={styles.FormWrapper}>
@@ -49,13 +56,12 @@ export function PlayerForm({ startGame, children, players, showForm }) {
                 id="p2"
                 label="Player 2"
                 value={p2}
-                onChange={setP2}
-                placeholder={players[2].name}
+                onChange={(e) => setP2(e)}
+                placeholder={players?.[2]?.name ?? 'White'}
               />
             </div>
           </>
         )}
-        {err && <p className={styles.err}>{err}</p>}
 
         <footer className={styles.footerBtns}>{children}</footer>
       </form>
@@ -63,3 +69,4 @@ export function PlayerForm({ startGame, children, players, showForm }) {
   );
 }
 export default PlayerForm;
+//  {err && <p className={styles.err}>{err}</p>} needed?
