@@ -1,4 +1,4 @@
-name: Semantic Release med dispatch
+name: Semantic Release with dispatch
 
 on:
   push:
