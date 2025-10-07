@@ -6,17 +6,6 @@ import styles from './PlayerForm.module.css';
 export function PlayerForm({ startGame, children, players, showForm }) {
   const [p1, setP1] = useState('');
   const [p2, setP2] = useState('');
-  // const [err, setErr] = useState('');
-
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     setErr('');
-  //   }, 2000);
-
-  //   return () => {
-  //     clearTimeout(timeout);
-  //   };
-  // }, [err]); what is this?
 
   useEffect(() => {
     if (showForm) {
@@ -69,4 +58,3 @@ export function PlayerForm({ startGame, children, players, showForm }) {
   );
 }
 export default PlayerForm;
-//  {err && <p className={styles.err}>{err}</p>} needed?
