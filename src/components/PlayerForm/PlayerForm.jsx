@@ -3,13 +3,7 @@ import Input from "../Input/Input.jsx";
 import Brick from "../Brick/Brick";
 import styles from "./PlayerForm.module.css";
 
-export function PlayerForm({
-  startGame,
-  children,
-  players,
-  showForm,
-  setShowForm,
-}) {
+export function PlayerForm({ startGame, children, players, showForm }) {
   const [p1, setP1] = useState("");
   const [p2, setP2] = useState("");
   const [err, setErr] = useState("");
@@ -30,14 +24,13 @@ export function PlayerForm({
     startGame({ p1, p2 });
     setP2("");
     setP1("");
-    setShowForm(true);
   };
 
   return (
     <>
       {" "}
       <form onSubmit={handleSubmit}>
-        {!showForm && (
+        {showForm && (
           <>
             <h2 className={styles.textPlayerTitle}>Players</h2>
             <div className={styles.FormWrapper}>
