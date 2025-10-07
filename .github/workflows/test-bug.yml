@@ -13,8 +13,16 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
 
-      - name: Visa PAT-längd (för debug, visa aldrig token i klartext!)
-        run: echo "PAT length ${{ secrets.PAT && secrets.PAT.length || 'undefined' }}"
+      - name: Check PAT environment variable
+        env:
+          PAT: ${{ secrets.PAT }}
+        run: |
+          if [ -z "$PAT" ]; then
+            echo "PAT är tom eller saknas"
+            exit 1
+          else
+            echo "PAT är satt med längd: ${#PAT}"
+          fi
 
       - name: Kör dispatch-script med debug
         env:
