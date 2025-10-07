@@ -15,7 +15,6 @@ const Menu = ({
           className={styles.backdrop}
           onClick={gameState !== 'playing' ? undefined : toggleModal}
         >
-          <p>SHITG</p>
           <dialog
             open
             className={`${styles.menu} ${className}`}
