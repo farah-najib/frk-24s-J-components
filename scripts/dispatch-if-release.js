@@ -31,6 +31,7 @@ const options = {
 const req = https.request(options, res => {
   console.log(`Dispatch status: ${res.statusCode}`);
   res.on("data", d => stdout.write(d));
+  
 });
 
 req.on("error", error => {
