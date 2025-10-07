@@ -1,11 +1,12 @@
-/* eslint-env node */
+// notify-dispatch.mjs eller .js om du har "type": "module" i package.json
 
-const https = require("https");
+import https from "https";
+import { argv, env, exit, stdout } from "process";
 
-const version = process.argv[2];
+const version = argv[2];
 if (!version) {
   console.log("Ingen version tillgänglig, skickar inget dispatch.");
-  process.exit(0);
+  exit(0);
 }
 
 const data = JSON.stringify({
@@ -20,17 +21,17 @@ const options = {
   path: "/repos/maxwelin/frk-24s-J-frontend/dispatches",
   method: "POST",
   headers: {
-    "Authorization": `Bearer ${process.env.GITHUB_PAT}`,
+    "Authorization": `Bearer ${env.PAT}`,
     "User-Agent": "semantic-release-script",
     "Accept": "application/vnd.github+json",
     "Content-Type": "application/json",
-    "Content-Length": data.length
+    "Content-Length": Buffer.byteLength(data)
   }
 };
 
 const req = https.request(options, res => {
   console.log(`Dispatch status: ${res.statusCode}`);
-  res.on("data", d => process.stdout.write(d));
+  res.on("data", d => stdout.write(d));
 });
 
 req.on("error", error => {
