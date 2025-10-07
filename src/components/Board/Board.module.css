@@ -58,7 +58,7 @@
 	height: 60px;
 	display: flex;
 	justify-content: flex-end;
-	padding-right: 0 40px;
+	padding: 0 40px;
 	align-items: center;
 	box-sizing: border-box;
 }
