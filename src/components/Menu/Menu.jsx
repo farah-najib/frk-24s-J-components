@@ -1,4 +1,4 @@
-import styles from "./Menu.module.css";
+import styles from './Menu.module.css';
 
 const Menu = ({
   className,
@@ -13,8 +13,9 @@ const Menu = ({
       {openModal && (
         <div
           className={styles.backdrop}
-          onClick={gameState !== "playing" ? undefined : toggleModal}
+          onClick={gameState !== 'playing' ? undefined : toggleModal}
         >
+          <p>SHITG</p>
           <dialog
             open
             className={`${styles.menu} ${className}`}
@@ -38,7 +39,7 @@ const Menu = ({
               </li>
               <li>
                 The goal is to be the first to get five in a row – horizontally,
-                vertically, or diagonally.{" "}
+                vertically, or diagonally.{' '}
               </li>
               <li>Stones cannot be moved or removed once placed.</li>
               <li>
