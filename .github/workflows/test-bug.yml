@@ -14,7 +14,7 @@ jobs:
           token: ${{ secrets.PAT }}
 
       - name: Visa PAT-längd (för debug, visa aldrig token i klartext!)
-        run: echo "PAT length: ${{ secrets.PAT && secrets.PAT.length || 'undefined' }}"
+        run: echo "PAT length ${{ secrets.PAT && secrets.PAT.length || 'undefined' }}"
 
       - name: Kör dispatch-script med debug
         env:
