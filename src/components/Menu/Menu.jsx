@@ -20,7 +20,7 @@ const Menu = ({
             className={`${styles.menu} ${className}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <h1 className={styles.textHeader}>Gomoku</h1>
+            {/* <h1 className={styles.textHeader}>Gomoku</h1>
 
             <h2 className={styles.sectionTitle}>about</h2>
 
@@ -44,7 +44,7 @@ const Menu = ({
               <li>
                 If the board is full with no winner, the game ends in a draw.
               </li>
-            </ul>
+            </ul> */}
 
             {children}
           </dialog>
