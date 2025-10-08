@@ -32,7 +32,7 @@ const Menu = ({
 
             <h2 className={styles.sectionTitle}>how to play</h2>
 
-            <ul className={styles.textParagraph}>
+            {/* <ul className={styles.textParagraph}>
               <li>
                 Two players take turns placing stones ( Black goes first).
               </li>
@@ -44,7 +44,7 @@ const Menu = ({
               <li>
                 If the board is full with no winner, the game ends in a draw.
               </li>
-            </ul>
+            </ul> */}
 
             {children}
           </dialog>
